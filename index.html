@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prashik Fulke | AI & Data Science Portfolio</title>
+    <meta name="description" content="Portfolio of Prashik Fulke, an Artificial Intelligence and Data Science undergraduate bridging the gap between data science and software engineering.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#C2D099',
+                        secondary: '#DCE8B9',
+                        dark: '#000000',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+        
+        /* Glassmorphism Utilities */
+        .glass-panel {
+            background: rgba(25, 25, 25, 0.4);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+            transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .glass-panel:hover {
+            border-color: rgba(194, 208, 153, 0.8); /* Primary Accent */
+        }
+        .glass-btn {
+            background: rgba(25, 25, 25, 0.4);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+        .glass-btn:hover {
+            border-color: #C2D099;
+            color: #C2D099;
+            transform: translateY(-2px);
+        }
+        .btn-glow {
+            position: relative;
+        }
+        .btn-glow:hover {
+            box-shadow: 0 0 20px rgba(194, 208, 153, 0.4);
+            border-color: #C2D099;
+            color: #C2D099;
+        }
+
+        /* Typography */
+        .text-gradient {
+            background: linear-gradient(to right, #ffffff, #C2D099);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .text-body {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Logo Animation */
+        .logo-text {
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            max-width: 0;
+            animation: expandLogo 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards 1.5s;
+        }
+        @keyframes expandLogo {
+            to { max-width: 150px; }
+        }
+        .blink-cursor {
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        /* Timeline Styles */
+        .timeline-line {
+            position: absolute;
+            left: 11px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .timeline-dot {
+            position: absolute;
+            left: 0;
+            top: 6px;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #C2D099;
+            box-shadow: 0 0 15px rgba(194, 208, 153, 0.6);
+            border: 4px solid #000;
+            z-index: 10;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #000;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #C2D099;
+        }
+        
+        /* Custom Selection */
+        ::selection {
+            background: #C2D099;
+            color: #000;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-primary selection:text-black">
+
+    <!-- 3D Background Canvas -->
+    <canvas id="bg-canvas" class="fixed inset-0 z-[-1] pointer-events-none"></canvas>
+
+    <!-- Navbar -->
+    <nav class="fixed top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-5xl z-50 glass-panel rounded-2xl md:rounded-full px-6 py-4 flex flex-col md:flex-row justify-between items-center transition-all duration-300">
+        <div class="flex justify-between items-center w-full md:w-auto">
+            <!-- Logo Animation -->
+            <a href="#" class="font-mono font-bold text-lg flex items-center group text-white hover:text-primary transition-colors">
+                <span>P</span>
+                <span class="logo-text">RASHIK_</span>
+                <span>F</span>
+                <span class="logo-text">ULKE</span>
+                <span class="blink-cursor text-primary">_</span>
+            </a>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="md:hidden text-white/70 hover:text-white" id="mobile-menu-btn" aria-label="Toggle Menu">
+                <i class="ph ph-list text-2xl"></i>
+            </button>
+        </div>
+        
+        <!-- Navigation Links -->
+        <div class="hidden md:flex flex-col md:flex-row items-center gap-2 md:gap-8 mt-4 md:mt-0 w-full md:w-auto pb-4 md:pb-0" id="nav-links">
+            <a href="#about" class="text-sm font-medium text-white/70 hover:text-primary transition-colors py-2 md:py-0 w-full md:w-auto text-center">About</a>
+            <a href="#skills" class="text-sm font-medium text-white/70 hover:text-primary transition-colors py-2 md:py-0 w-full md:w-auto text-center">Skills</a>
+            <a href="#projects" class="text-sm font-medium text-white/70 hover:text-primary transition-colors py-2 md:py-0 w-full md:w-auto text-center">Projects</a>
+            <a href="#experience" class="text-sm font-medium text-white/70 hover:text-primary transition-colors py-2 md:py-0 w-full md:w-auto text-center">Experience</a>
+            <a href="#contact" class="mt-2 md:mt-0 glass-btn px-6 py-2 rounded-full text-sm font-medium w-full md:w-auto text-center">Let's Connect</a>
+        </div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <main class="relative z-10 max-w-6xl mx-auto px-6 sm:px-12 pt-40 pb-24 flex flex-col gap-32">
+
+        <!-- Hero Section -->
+        <section class="min-h-[75vh] flex flex-col justify-center items-start pt-10">
+            <!-- Availability Badge -->
+            <div class="flex items-center gap-3 px-4 py-2 rounded-full glass-panel w-fit mb-8">
+                <span class="relative flex h-2.5 w-2.5">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
+                </span>
+                <span class="text-xs sm:text-sm font-mono text-white/80">Available for Opportunities</span>
+            </div>
+            
+            <!-- Headline -->
+            <h1 class="text-5xl sm:text-6xl md:text-8xl font-bold tracking-tight mb-6 leading-tight">
+                Hi, I'm <br class="hidden sm:block"/>
+                <span class="text-gradient">Prashik Fulke.</span>
+            </h1>
+            
+            <!-- Subtitle -->
+            <p class="text-xl md:text-2xl text-body max-w-2xl mb-12 leading-relaxed">
+                I'm an Artificial Intelligence and Data Science undergraduate.
+            </p>
+            
+            <!-- CTA Buttons -->
+            <div class="flex flex-col gap-4 w-full max-w-md">
+                <a href="#projects" class="glass-btn w-full text-center py-4 rounded-xl font-medium text-lg flex items-center justify-center gap-2 group">
+                    View Projects 
+                    <i class="ph ph-arrow-right group-hover:translate-x-2 transition-transform"></i>
+                </a>
+                <div class="grid grid-cols-2 gap-4">
+                    <a href="mailto:prashikfulke@example.com" class="glass-btn text-center py-3 rounded-xl font-medium flex items-center justify-center gap-2">
+                        <i class="ph ph-envelope-simple text-xl"></i> Email
+                    </a>
+                    <a href="https://linkedin.com/in/prashikfulke" target="_blank" rel="noopener noreferrer" class="glass-btn text-center py-3 rounded-xl font-medium flex items-center justify-center gap-2">
+                        <i class="ph ph-linkedin-logo text-xl"></i> LinkedIn
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 00: About Me -->
+        <section id="about" class="scroll-mt-32">
+            <h2 class="text-sm font-mono text-primary mb-3">00. Who I Am</h2>
+            <h3 class="text-3xl md:text-5xl font-bold mb-10">About Me</h3>
+            
+            <div class="glass-panel rounded-3xl p-8 md:p-12">
+                <p class="text-lg md:text-xl text-body leading-relaxed mb-10">
+                    I am passionate about solving real-world problems by combining intelligent data models with robust software architecture. My approach focuses on building scalable systems that are both analytically profound and beautifully designed.
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="flex items-start gap-4">
+                        <i class="ph-fill ph-check-circle text-2xl text-primary shrink-0 mt-1"></i>
+                        <p class="text-body"><strong class="text-white font-medium">Academic Foundation:</strong> B.Tech in AI & Data Science at Anjuman College of Engineering (Expected 2026).</p>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <i class="ph-fill ph-check-circle text-2xl text-primary shrink-0 mt-1"></i>
+                        <p class="text-body"><strong class="text-white font-medium">AI & Security Focus:</strong> Building ML/DL models (Autoencoders, Isolation Forests) for real-time cybersecurity.</p>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <i class="ph-fill ph-check-circle text-2xl text-primary shrink-0 mt-1"></i>
+                        <p class="text-body"><strong class="text-white font-medium">Full-Stack Execution:</strong> Python, HTML/CSS, Firebase, DigitalOcean deployment.</p>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <i class="ph-fill ph-check-circle text-2xl text-primary shrink-0 mt-1"></i>
+                        <p class="text-body"><strong class="text-white font-medium">Problem Solver:</strong> Analytical thinker creating scalable, security-driven applications.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 01: Tech Arsenal -->
+        <section id="skills" class="scroll-mt-32">
+            <h2 class="text-sm font-mono text-primary mb-3">01. What I Use</h2>
+            <h3 class="text-3xl md:text-5xl font-bold mb-10">Tech Arsenal</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Large Bio Card -->
+                <div class="md:col-span-3 glass-panel rounded-3xl p-8 md:p-12">
+                    <h4 class="text-2xl font-bold mb-4">Bridging the Gap</h4>
+                    <p class="text-body text-lg max-w-4xl leading-relaxed">
+                        I specialize in standing at the intersection of data science and software engineering. From training deep learning models for anomaly detection to building responsive, user-friendly web applications, I bring end-to-end technical execution to every project.
+                    </p>
+                </div>
+                
+                <!-- Category Cards -->
+                <div class="glass-panel rounded-3xl p-8 flex flex-col h-full">
+                    <div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-6">
+                        <i class="ph ph-brain text-2xl text-primary"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-6">AI & Data Science</h4>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="px-3 py-1.5 glass-panel rounded-lg text-xs font-mono text-secondary">Machine Learning</span>
+                        <span class="px-3 py-1.5 glass-panel rounded-lg text-xs font-mono text-secondary">Deep Learning</span>
+                        <span class="px-3 py-1.5 glass-panel rounded-lg text-xs font-mono text-secondary">Anomaly Detection</span>
+                        <span class="px-3 py-1.5 glass-panel rounded-lg text-xs font-mono text-secondary">Autoencoders</span>
+                        <span class="px-3 py-1.5 glass-panel rounded-lg text-xs font-mono text-secondary">Isolation Forest</span>
+                        <span class="px-3 py-1.5 glass-panel rounded-lg text-xs font-mono text-secondary">Prompt Eng.</span>
+                    </div>
+                </div>
+
+                <div class="glass-panel rounded-3xl p-8 flex flex-col h-full">
+                    <div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-6">
+                        <i class="ph ph-code text-2xl text-primary"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-6">Languages & DBs</h4>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="px-3 py-1.5 glass-panel rounded-lg text-xs font-mono text-secondary">Python</span>
+                        <span class="px-3 py-1.5 glass-panel rounded-lg text-xs font-mono text-secondary">SQL</span>
+                        <span class="px-3 py-1.5 glass-panel rounded-lg text-xs font-mono text-secondary">HTML/CSS</span>
+                        <span class="px-3 py-1.5 glass-panel rounded-lg text-xs font-mono text-secondary">Firebase RTDB</span>
+                    </div>
+                </div>
+
+                <div class="glass-panel rounded-3xl p-8 flex flex-col h-full">
+                    <div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-6">
+                        <i class="ph ph-hard-drives text-2xl text-primary"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-6">Infrastructure & Tools</h4>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="px-3 py-1.5 glass-panel rounded-lg text-xs font-mono text-secondary">Firebase</span>
+                        <span class="px-3 py-1.5 glass-panel rounded-lg text-xs font-mono text-secondary">DigitalOcean</span>
+                        <span class="px-3 py-1.5 glass-panel rounded-lg text-xs font-mono text-secondary">Streamlit</span>
+                        <span class="px-3 py-1.5 glass-panel rounded-lg text-xs font-mono text-secondary">REST APIs</span>
+                        <span class="px-3 py-1.5 glass-panel rounded-lg text-xs font-mono text-secondary">Git & GitHub</span>
+                        <span class="px-3 py-1.5 glass-panel rounded-lg text-xs font-mono text-secondary">VS Code</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 02: Selected Work -->
+        <section id="projects" class="scroll-mt-32">
+            <h2 class="text-sm font-mono text-primary mb-3">02. Selected Work</h2>
+            <h3 class="text-3xl md:text-5xl font-bold mb-10">Featured Projects</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Project 1 -->
+                <div class="glass-panel rounded-3xl p-8 md:p-10 flex flex-col group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-bl-full -mr-8 -mt-8 blur-2xl transition-opacity opacity-0 group-hover:opacity-100"></div>
+                    
+                    <p class="text-xs font-mono text-primary mb-3 uppercase tracking-wider">Softsense Intern, Mar - Apr 2025</p>
+                    <h4 class="text-2xl md:text-3xl font-bold mb-6 pr-8">AI Log Monitoring & Threat Detection</h4>
+                    
+                    <ul class="space-y-3 mb-10 grow">
+                        <li class="flex items-start gap-3 text-body">
+                            <i class="ph-fill ph-caret-right text-primary shrink-0 mt-1"></i>
+                            <span>Reduced false positives by 30% through advanced anomaly detection models.</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-body">
+                            <i class="ph-fill ph-caret-right text-primary shrink-0 mt-1"></i>
+                            <span>Processed and analyzed real-time log streams for instantaneous threat alerts.</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="px-3 py-1 bg-white/5 rounded-md text-xs font-mono border border-white/10 text-white/80">Python</span>
+                        <span class="px-3 py-1 bg-white/5 rounded-md text-xs font-mono border border-white/10 text-white/80">Machine Learning</span>
+                        <span class="px-3 py-1 bg-white/5 rounded-md text-xs font-mono border border-white/10 text-white/80">Autoencoders</span>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="glass-panel rounded-3xl p-8 md:p-10 flex flex-col group relative overflow-hidden">
+                    <a href="#" class="absolute top-8 right-8 w-10 h-10 rounded-full glass-panel flex items-center justify-center text-white/50 group-hover:text-primary group-hover:border-primary transition-all z-10">
+                        <i class="ph ph-arrow-up-right text-xl group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
+                    </a>
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-bl-full -mr-8 -mt-8 blur-2xl transition-opacity opacity-0 group-hover:opacity-100"></div>
+                    
+                    <p class="text-xs font-mono text-primary mb-3 uppercase tracking-wider">Independent Project, Aug 2025</p>
+                    <h4 class="text-2xl md:text-3xl font-bold mb-6 pr-12">OSAgent</h4>
+                    
+                    <ul class="space-y-3 mb-10 grow">
+                        <li class="flex items-start gap-3 text-body">
+                            <i class="ph-fill ph-caret-right text-primary shrink-0 mt-1"></i>
+                            <span>Engineered a highly responsive web application with a robust Firebase backend architecture.</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-body">
+                            <i class="ph-fill ph-caret-right text-primary shrink-0 mt-1"></i>
+                            <span>Deployed securely on DigitalOcean, achieving a 30% improvement in load performance.</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="px-3 py-1 bg-white/5 rounded-md text-xs font-mono border border-white/10 text-white/80">HTML/CSS</span>
+                        <span class="px-3 py-1 bg-white/5 rounded-md text-xs font-mono border border-white/10 text-white/80">Firebase</span>
+                        <span class="px-3 py-1 bg-white/5 rounded-md text-xs font-mono border border-white/10 text-white/80">DigitalOcean</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 03: Journey -->
+        <section id="experience" class="scroll-mt-32">
+            <h2 class="text-sm font-mono text-primary mb-3">03. My Journey</h2>
+            <h3 class="text-3xl md:text-5xl font-bold mb-12">Experience & Education</h3>
+            
+            <div class="relative max-w-4xl mx-auto pl-4 md:pl-0">
+                <!-- Vertical Line -->
+                <div class="timeline-line md:left-[50%] md:-translate-x-[1px]"></div>
+                
+                <!-- Timeline Items -->
+                <div class="space-y-16">
+                    
+                    <!-- Node 1 -->
+                    <div class="relative flex flex-col md:flex-row items-center justify-between group">
+                        <div class="timeline-dot md:left-[50%] md:-translate-x-[12px] group-hover:scale-125 transition-transform duration-300"></div>
+                        
+                        <div class="md:w-1/2 w-full pl-10 md:pl-0 md:pr-16 text-left md:text-right mb-4 md:mb-0">
+                            <h4 class="text-xl md:text-2xl font-bold">Intern (AI & Cybersecurity)</h4>
+                            <p class="text-primary font-mono text-sm mt-1 mb-2">Softsense Technoserve | Mar 2025 - Apr 2025</p>
+                        </div>
+                        <div class="md:w-1/2 w-full pl-10 md:pl-16">
+                            <div class="glass-panel p-6 rounded-2xl relative">
+                                <p class="text-body text-sm md:text-base">Spearheaded the development of AI models for network anomaly detection. Successfully achieved over 90% detection accuracy in identifying anomalous network behaviors and potential threats.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Node 2 -->
+                    <div class="relative flex flex-col md:flex-row-reverse items-center justify-between group">
+                        <div class="timeline-dot md:left-[50%] md:-translate-x-[12px] group-hover:scale-125 transition-transform duration-300"></div>
+                        
+                        <div class="md:w-1/2 w-full pl-10 md:pl-0 md:pl-16 text-left mb-4 md:mb-0">
+                            <h4 class="text-xl md:text-2xl font-bold">B.Tech in AI & Data Science</h4>
+                            <p class="text-primary font-mono text-sm mt-1 mb-2">Anjuman College of Engineering | Expected 2026</p>
+                        </div>
+                        <div class="md:w-1/2 w-full pl-10 md:pl-0 md:pr-16">
+                            <div class="glass-panel p-6 rounded-2xl relative">
+                                <p class="text-body text-sm md:text-base">Focusing on machine learning, deep learning, and robust software engineering practices. Current Average Aggregate: <strong>6.60</strong>.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Node 3 -->
+                    <div class="relative flex flex-col md:flex-row items-center justify-between group">
+                        <div class="timeline-dot md:left-[50%] md:-translate-x-[12px] group-hover:scale-125 transition-transform duration-300"></div>
+                        
+                        <div class="md:w-1/2 w-full pl-10 md:pl-0 md:pr-16 text-left md:text-right mb-4 md:mb-0">
+                            <h4 class="text-xl md:text-2xl font-bold">12th (HSC)</h4>
+                            <p class="text-primary font-mono text-sm mt-1 mb-2">Sindhu Mahavidyalaya | 2021 - 2022</p>
+                        </div>
+                        <div class="md:w-1/2 w-full pl-10 md:pl-16">
+                            <div class="glass-panel p-6 rounded-2xl relative">
+                                <p class="text-body text-sm md:text-base">Completed higher secondary education with a focus on science and mathematics. Secured <strong>62%</strong>.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer / Contact -->
+    <footer id="contact" class="border-t border-white/10 pt-20 pb-8 bg-gradient-to-b from-transparent to-black">
+        <div class="max-w-6xl mx-auto px-6 sm:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20 items-center">
+                <!-- Left Side -->
+                <div>
+                    <h2 class="font-serif text-5xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight text-white">PRASHIK<br/>FULKE</h2>
+                    <p class="text-body text-lg max-w-md mb-10 leading-relaxed">
+                        Building products, systems, and AI-powered applications. Always learning by doing.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="https://linkedin.com/in/prashikfulke" target="_blank" rel="noopener noreferrer" class="w-14 h-14 rounded-full glass-panel flex items-center justify-center hover:text-primary hover:border-primary hover:-translate-y-1 transition-all group" aria-label="LinkedIn">
+                            <i class="ph-fill ph-linkedin-logo text-2xl group-hover:scale-110 transition-transform"></i>
+                        </a>
+                        <a href="mailto:prashikfulke@example.com" class="w-14 h-14 rounded-full glass-panel flex items-center justify-center hover:text-primary hover:border-primary hover:-translate-y-1 transition-all group" aria-label="Email">
+                            <i class="ph-fill ph-envelope-simple text-2xl group-hover:scale-110 transition-transform"></i>
+                        </a>
+                        <a href="https://github.com/PrashikFulke02" target="_blank" rel="noopener noreferrer" class="w-14 h-14 rounded-full glass-panel flex items-center justify-center hover:text-primary hover:border-primary hover:-translate-y-1 transition-all group" aria-label="GitHub">
+                            <i class="ph-fill ph-github-logo text-2xl group-hover:scale-110 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Right Side -->
+                <div class="flex flex-col items-start lg:items-end justify-center gap-8">
+                    <a href="mailto:prashikfulke@example.com" class="glass-panel btn-glow px-10 py-5 rounded-2xl text-xl md:text-2xl font-bold tracking-widest transition-all">
+                        [ WORK WITH ME ]
+                    </a>
+                    
+                    <div class="flex flex-col items-start lg:items-end gap-4 mt-4">
+                        <a href="Prashik Fulke ((current general resume).pdf" download class="text-body hover:text-primary transition-colors flex items-center gap-3 group font-medium">
+                            <i class="ph ph-download-simple text-xl group-hover:-translate-y-0.5 transition-transform"></i> Download Resume
+                        </a>
+                        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="text-body hover:text-primary transition-colors flex items-center gap-3 group font-medium">
+                            <i class="ph ph-arrow-up text-xl group-hover:-translate-y-0.5 transition-transform"></i> Back To Top
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center text-xs md:text-sm font-mono text-white/40 pt-8 border-t border-white/10 tracking-widest uppercase">
+                Copyright © 2026 Prashik Fulke. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        // Mobile Menu Logic
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const navLinks = document.getElementById('nav-links');
+        
+        mobileBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('hidden');
+            navLinks.classList.toggle('flex');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if(window.innerWidth < 768) {
+                    navLinks.classList.add('hidden');
+                    navLinks.classList.remove('flex');
+                }
+            });
+        });
+
+        // Three.js 3D Neural Network Background
+        const initBackground = () => {
+            const canvas = document.getElementById('bg-canvas');
+            if (!canvas) return;
+
+            const scene = new THREE.Scene();
+            
+            // Camera setup
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            camera.position.z = 5;
+
+            // Renderer setup
+            const renderer = new THREE.WebGLRenderer({ 
+                canvas: canvas, 
+                alpha: true, 
+                antialias: true 
+            });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); // Optimize for high DPI
+
+            // Particles
+            const particleCount = 200;
+            const particles = new THREE.BufferGeometry();
+            const positions = new Float32Array(particleCount * 3);
+            const velocities = [];
+
+            for (let i = 0; i < particleCount; i++) {
+                positions[i * 3] = (Math.random() - 0.5) * 20;     // x
+                positions[i * 3 + 1] = (Math.random() - 0.5) * 20; // y
+                positions[i * 3 + 2] = (Math.random() - 0.5) * 10 - 5; // z
+                
+                velocities.push({
+                    x: (Math.random() - 0.5) * 0.015,
+                    y: (Math.random() - 0.5) * 0.015,
+                    z: (Math.random() - 0.5) * 0.015
+                });
+            }
+
+            particles.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+
+            const pMaterial = new THREE.PointsMaterial({
+                color: 0xffffff,
+                size: 0.12,
+                transparent: true,
+                opacity: 0.3,
+                sizeAttenuation: true
+            });
+
+            const particleSystem = new THREE.Points(particles, pMaterial);
+            scene.add(particleSystem);
+
+            // Lines Geometry (Pre-allocate buffer for performance)
+            const maxLines = (particleCount * (particleCount - 1)) / 2;
+            const lineGeometry = new THREE.BufferGeometry();
+            const linePositions = new Float32Array(maxLines * 6);
+            lineGeometry.setAttribute('position', new THREE.BufferAttribute(linePositions, 3));
+            
+            const lineMaterial = new THREE.LineBasicMaterial({
+                color: 0xC2D099,
+                transparent: true,
+                opacity: 0.15
+            });
+            
+            const linesMesh = new THREE.LineSegments(lineGeometry, lineMaterial);
+            scene.add(linesMesh);
+
+            // Mouse Interaction Parallax
+            let mouseX = 0;
+            let mouseY = 0;
+            let targetX = 0;
+            let targetY = 0;
+
+            const windowHalfX = window.innerWidth / 2;
+            const windowHalfY = window.innerHeight / 2;
+
+            document.addEventListener('mousemove', (event) => {
+                mouseX = (event.clientX - windowHalfX);
+                mouseY = (event.clientY - windowHalfY);
+            }, { passive: true });
+
+            // Animation Loop
+            const minDistance = 2.5;
+
+            const animate = () => {
+                requestAnimationFrame(animate);
+                
+                // Update Particle Positions
+                const posAttribute = particles.getAttribute('position');
+                const positionsArray = posAttribute.array;
+                
+                for(let i = 0; i < particleCount; i++) {
+                    positionsArray[i*3] += velocities[i].x;
+                    positionsArray[i*3+1] += velocities[i].y;
+                    positionsArray[i*3+2] += velocities[i].z;
+                    
+                    // Bounce off boundaries
+                    if(Math.abs(positionsArray[i*3]) > 12) velocities[i].x *= -1;
+                    if(Math.abs(positionsArray[i*3+1]) > 12) velocities[i].y *= -1;
+                    if(positionsArray[i*3+2] > 2 || positionsArray[i*3+2] < -12) velocities[i].z *= -1;
+                }
+                posAttribute.needsUpdate = true;
+                
+                // Update Lines connecting close particles
+                let vertexCount = 0;
+                
+                for(let i = 0; i < particleCount; i++) {
+                    for(let j = i + 1; j < particleCount; j++) {
+                        const dx = positionsArray[i*3] - positionsArray[j*3];
+                        const dy = positionsArray[i*3+1] - positionsArray[j*3+1];
+                        const dz = positionsArray[i*3+2] - positionsArray[j*3+2];
+                        const distSq = dx*dx + dy*dy + dz*dz;
+                        
+                        if(distSq < minDistance * minDistance) {
+                            linePositions[vertexCount++] = positionsArray[i*3];
+                            linePositions[vertexCount++] = positionsArray[i*3+1];
+                            linePositions[vertexCount++] = positionsArray[i*3+2];
+                            linePositions[vertexCount++] = positionsArray[j*3];
+                            linePositions[vertexCount++] = positionsArray[j*3+1];
+                            linePositions[vertexCount++] = positionsArray[j*3+2];
+                        }
+                    }
+                }
+                
+                lineGeometry.setDrawRange(0, vertexCount / 3);
+                lineGeometry.attributes.position.needsUpdate = true;
+
+                // Parallax Camera Update
+                targetX = mouseX * 0.001;
+                targetY = mouseY * 0.001;
+                
+                camera.position.x += (targetX - camera.position.x) * 0.05;
+                camera.position.y += (-targetY - camera.position.y) * 0.05;
+                camera.lookAt(scene.position);
+                
+                renderer.render(scene, camera);
+            };
+
+            animate();
+
+            // Handle Resize
+            window.addEventListener('resize', () => {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            }, { passive: true });
+        };
+
+        // Initialize background when DOM is loaded
+        document.addEventListener('DOMContentLoaded', initBackground);
+    </script>
+</body>
+</html>
