@@ -314,7 +314,7 @@ Processed and analyzed real-time log streams for instantaneous threat alerts usi
               {[
                 { title: "Intern (AI & Cybersecurity)", sub: "Softsense Technoserve | Mar 2025 - Apr 2025", desc: "Spearheaded the development of AI models for network anomaly detection. Successfully achieved over 90% detection accuracy in identifying anomalous network behaviors and potential threats.", align: "right" },
                 { title: "B.Tech in AI & Data Science", sub: "Anjuman College of Engineering | Expected 2026", desc: "Focusing on machine learning, deep learning, and robust software engineering practices. Current Average Aggregate: 6.60.", align: "left" },
-                { title: "12th (HSC)", sub: "Sindhu Mahavidyalaya | 2021 - 2022", desc: "Completed higher secondary education with a focus on science and mathematics. Secured 62%.", align: "right" }
+                { title: "12th (HSC)", sub: "Sindhu Mahavidyalaya | 2021 - 2022", desc: "Completed higher secondary education with a focus on science and mathematics. Secured 57%.", align: "right" }
               ].map((node, idx) => (
                 <motion.div
                   key={idx}
