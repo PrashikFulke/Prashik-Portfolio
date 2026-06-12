@@ -72,7 +72,7 @@ export default function Home() {
           </h1>
 
           <p className="text-xl md:text-2xl text-white/70 max-w-2xl mb-12 leading-relaxed">
-            I'm an Artificial Intelligence and Data Science undergraduate.
+            I'm an Artificial Intelligence & Data Science Graduate.
           </p>
 
           <div className="flex flex-col gap-4 w-full max-w-md">
