@@ -29,6 +29,7 @@
       border-bottom: 2px solid #1a1a1a;
       padding-bottom: 16px;
       margin-bottom: 20px;
+      text-align: center;
     }
 
     .header h1 {
@@ -36,21 +37,22 @@
       font-weight: 700;
       letter-spacing: -0.5px;
       color: #111;
-      margin-bottom: 2px;
+      margin-bottom: 8px;
     }
 
     .header .location {
+      display: inline-block;
       font-size: 9.5pt;
       color: #555;
-      margin-bottom: 6px;
       font-weight: 400;
     }
 
     .contact-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 18px;
-      font-size: 9pt;
+      justify-content: center;
+      gap: 12px;
+      font-size: 9.5pt;
       color: #333;
     }
 
@@ -70,21 +72,21 @@
     }
 
     .section-title {
-      font-size: 9pt;
+      font-size: 10pt;
       font-weight: 700;
-      letter-spacing: 1.5px;
+      letter-spacing: 1px;
       text-transform: uppercase;
-      color: #2d6a4f;
-      border-bottom: 1px solid #d0e8d8;
+      color: #111;
+      border-bottom: 1px solid #ddd;
       padding-bottom: 3px;
       margin-bottom: 10px;
     }
 
     /* Summary */
     .summary p {
-      font-size: 10pt;
+      font-size: 9.5pt;
       color: #333;
-      line-height: 1.6;
+      line-height: 1.5;
     }
 
     /* Experience & Project entries */
@@ -98,30 +100,30 @@
       align-items: baseline;
       gap: 8px;
       flex-wrap: wrap;
+      margin-bottom: 2px;
     }
 
     .entry-title {
-      font-size: 11pt;
+      font-size: 10.5pt;
       font-weight: 700;
       color: #111;
     }
 
     .entry-date {
-      font-size: 9pt;
-      color: #666;
+      font-size: 9.5pt;
+      color: #111;
       white-space: nowrap;
-      font-style: italic;
     }
 
     .entry-org {
       font-size: 9.5pt;
       color: #444;
-      margin-bottom: 5px;
-      font-weight: 500;
+      margin-bottom: 4px;
+      font-style: italic;
     }
 
     .entry-link {
-      font-size: 9pt;
+      font-size: 9.5pt;
       color: #2d6a4f;
       text-decoration: none;
     }
@@ -129,7 +131,7 @@
     ul.bullet-list {
       list-style: none;
       padding-left: 0;
-      margin-top: 5px;
+      margin-top: 4px;
     }
 
     ul.bullet-list li {
@@ -138,25 +140,32 @@
       color: #333;
       font-size: 9.5pt;
       margin-bottom: 3px;
-      line-height: 1.55;
+      line-height: 1.45;
     }
 
     ul.bullet-list li::before {
-      content: '▸';
+      content: '•';
       position: absolute;
       left: 0;
-      color: #2d6a4f;
-      font-size: 8pt;
-      top: 1px;
+      color: #111;
+      font-size: 10pt;
+      top: 0px;
     }
 
     /* Education */
     .edu-entry {
-      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 4px;
+    }
+
+    .edu-entry-content {
+      flex: 1;
     }
 
     .edu-entry .degree {
-      font-size: 10.5pt;
+      font-size: 10pt;
       font-weight: 700;
       color: #111;
     }
@@ -164,11 +173,13 @@
     .edu-entry .institution {
       font-size: 9.5pt;
       color: #444;
+      font-style: italic;
     }
 
     .edu-entry .edu-meta {
-      font-size: 9pt;
-      color: #666;
+      font-size: 9.5pt;
+      color: #111;
+      text-align: right;
     }
 
     /* Skills */
@@ -179,22 +190,17 @@
     }
 
     .skill-row {
-      display: flex;
-      align-items: baseline;
-      gap: 6px;
       font-size: 9.5pt;
+      line-height: 1.4;
     }
 
     .skill-label {
       font-weight: 700;
       color: #111;
-      min-width: 190px;
-      flex-shrink: 0;
     }
 
     .skill-value {
-      color: #444;
-      line-height: 1.5;
+      color: #333;
     }
 
     @media print {
@@ -209,29 +215,30 @@
   <!-- Header -->
   <div class="header">
     <h1>Prashik Fulke</h1>
-    <p class="location">Nagpur, Maharashtra, India</p>
     <div class="contact-row">
-      <span>prashikfulke00689@gmail.com</span>
-      <span>7558604743</span>
-      <a href="https://www.linkedin.com/in/prashik-fulke" target="_blank">linkedin.com/in/prashik-fulke</a>
+      <span class="location">Nagpur, Maharashtra, India</span> |
+      <span><a href="mailto:prashikfulke00689@gmail.com">prashikfulke00689@gmail.com</a></span> |
+      <span>7558604743</span> |
+      <a href="https://linkedin.com/in/prashik-fulke" target="_blank">linkedin.com/in/prashik-fulke</a> |
+      <a href="https://prashikfulke.me" target="_blank">prashikfulke.me</a>
     </div>
   </div>
 
   <!-- Summary -->
   <section class="summary">
-    <div class="section-title">Summary</div>
-    <p>Computer Science undergraduate with experience in AI-based anomaly detection, real-time log monitoring, and web development, focused on building scalable, security-driven and AI-powered applications.</p>
+    <div class="section-title">SUMMARY</div>
+    <p>Final-year B.Tech student in Artificial Intelligence &amp; Data Science, building production-grade autonomous AI agents and LLM-orchestration systems. Hands-on experience with multi-agent architectures (LangGraph), RAG memory (Supabase pgvector), browser automation (Playwright), and full-stack deployment. Currently seeking AI/ML engineering and AI agent development internships.</p>
   </section>
 
   <!-- Experience -->
   <section>
-    <div class="section-title">Experience</div>
+    <div class="section-title">EXPERIENCE</div>
     <div class="entry">
       <div class="entry-header">
-        <span class="entry-title">Intern</span>
-        <span class="entry-date">March 2025 – April 2025 · Nagpur, India</span>
+        <span class="entry-title">Intern — Softsense Technoserve (India) Private Limited</span>
+        <span class="entry-date">March 2025 – April 2025</span>
       </div>
-      <div class="entry-org">Softsense Technoserve (India) Private Limited</div>
+      <div class="entry-org">Nagpur, India</div>
       <ul class="bullet-list">
         <li>Built an AI-driven log monitoring system using machine learning and deep learning to detect real-time security anomalies.</li>
         <li>Reduced false positives by 30% and achieved 90%+ detection accuracy through model tuning and feature engineering.</li>
@@ -242,7 +249,21 @@
 
   <!-- Projects -->
   <section>
-    <div class="section-title">Projects</div>
+    <div class="section-title">PROJECTS</div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">Baxton — Autonomous AI Social Media Agent</span>
+        <span class="entry-date">2025</span>
+      </div>
+      <div class="entry-org">Personal Project</div>
+      <ul class="bullet-list">
+        <li>Engineered a fully autonomous AI agent using LangGraph StateGraph, FastAPI, and Playwright that manages Reddit and Instagram accounts end-to-end via a Telegram Bot — handling outreach, multi-turn conversations, and reporting with zero human intervention.</li>
+        <li>Designed a decoupled architecture: a 70B LLM Orchestrator (NVIDIA Llama 3.3) for real-time command execution and a Background Radar Daemon for asynchronous inbox monitoring and autonomous reply management.</li>
+        <li>Implemented a Tri-Core Cognitive Architecture (Orchestrator, Decision Engine, Persona-Voiced Drafter) deployed live to collect structured product reviews from real customers with zero manual follow-up.</li>
+        <li>Built a Shadow DOM-piercing Playwright scraper with a recursive TreeWalker to extract live chat from WebSocket-rendered Reddit Chat, and integrated Supabase pgvector RAG for cross-session persona consistency across platforms.</li>
+      </ul>
+    </div>
 
     <div class="entry">
       <div class="entry-header">
@@ -251,77 +272,73 @@
       </div>
       <div class="entry-org"><a class="entry-link" href="https://osagent.tech" target="_blank">osagent.tech</a></div>
       <ul class="bullet-list">
-        <li>Designed and developed responsive front-end using HTML &amp; CSS, improving page load performance by ~30%.</li>
+        <li>Designed and developed a responsive front-end using HTML &amp; CSS, improving page load performance by ~30%.</li>
         <li>Built and integrated backend services using Firebase, enabling real-time updates and secure data handling.</li>
-        <li>Managed version control and collaboration through GitHub, ensuring structured deployments.</li>
-        <li>Deployed and hosted the application on DigitalOcean, maintaining uptime and scalability.</li>
-      </ul>
-    </div>
-
-    <div class="entry">
-      <div class="entry-header">
-        <span class="entry-title">AI-Based Log Monitoring &amp; Threat Detection System</span>
-        <span class="entry-date">March 2025 – April 2025</span>
-      </div>
-      <div class="entry-org">Softsense Technoserve (India) Private Limited</div>
-      <ul class="bullet-list">
-        <li>Designed and implemented a real-time cybersecurity system to analyze system authentication logs and detect anomalous behavior using machine learning and deep learning models.</li>
-        <li>Applied Isolation Forest and Autoencoder models to identify brute-force attacks and unauthorized access patterns, reducing false positives by ~30% compared to rule-based detection.</li>
-        <li>Processed continuous log streams in real time, enabling rapid anomaly detection and improving threat visibility across authentication events.</li>
+        <li>Managed version control and collaboration through GitHub with structured deployments, and deployed/hosted the application on DigitalOcean, maintaining uptime and scalability.</li>
       </ul>
     </div>
   </section>
 
   <!-- Education -->
   <section>
-    <div class="section-title">Education</div>
+    <div class="section-title">EDUCATION</div>
 
     <div class="edu-entry">
-      <div class="degree">B.Tech in Artificial Intelligence &amp; Data Science</div>
-      <div class="institution">Anjuman College of Engineering and Technology, Nagpur</div>
-      <div class="edu-meta">2022 – 2026 (Expected) &nbsp;·&nbsp; Average Aggregate: 6.60 CGPA</div>
+      <div class="edu-entry-content">
+        <div class="degree">B.Tech in Artificial Intelligence &amp; Data Science</div>
+        <div class="institution">Anjuman College of Engineering and Technology, Nagpur | Aggregate: 6.60</div>
+      </div>
+      <div class="edu-meta">2022 – 2026 (Expected)</div>
     </div>
 
     <div class="edu-entry">
-      <div class="degree">12th (HSC)</div>
-      <div class="institution">Dada Ramchand Bakhru Sindhu Mahavidyalaya, Nagpur</div>
-      <div class="edu-meta">2021 – 2022 &nbsp;·&nbsp; 62%</div>
+      <div class="edu-entry-content">
+        <div class="degree">12th (HSC)</div>
+        <div class="institution">Dada Ramchand Bakhru Sindhu Mahavidyalaya, Nagpur | 57%</div>
+      </div>
+      <div class="edu-meta">2021 – 2022</div>
     </div>
 
     <div class="edu-entry">
-      <div class="degree">10th (SSC)</div>
-      <div class="institution">St John's High School, Nagpur</div>
-      <div class="edu-meta">2019 – 2020 &nbsp;·&nbsp; 82%</div>
+      <div class="edu-entry-content">
+        <div class="degree">10th (SSC)</div>
+        <div class="institution">St. John's High School, Nagpur | 82%</div>
+      </div>
+      <div class="edu-meta">2019 – 2020</div>
     </div>
   </section>
 
   <!-- Skills -->
   <section>
-    <div class="section-title">Skills</div>
+    <div class="section-title">SKILLS</div>
     <div class="skills-grid">
       <div class="skill-row">
         <span class="skill-label">Programming &amp; Scripting:</span>
-        <span class="skill-value">Python (Basic), SQL, HTML, CSS</span>
+        <span class="skill-value">Python, SQL, HTML, CSS, JavaScript</span>
       </div>
       <div class="skill-row">
-        <span class="skill-label">AI &amp; Data Science:</span>
-        <span class="skill-value">Prompt Engineering, AI Assistant Development, Machine Learning Fundamentals, Anomaly Detection, Data Preprocessing, Model Evaluation Basics</span>
+        <span class="skill-label">AI &amp; Agent Development:</span>
+        <span class="skill-value">LangGraph, LLM Orchestration, Prompt Engineering, Multi-Agent Systems, Autonomous AI Agents, RAG (pgvector), Anomaly Detection, ML Fundamentals</span>
       </div>
       <div class="skill-row">
-        <span class="skill-label">Web &amp; Cloud Technologies:</span>
-        <span class="skill-value">Firebase, GitHub, DigitalOcean, REST APIs, Streamlit</span>
+        <span class="skill-label">Automation &amp; Browsers:</span>
+        <span class="skill-value">Playwright, Playwright-Stealth, Shadow DOM Scraping, WebSocket Extraction, Headless Browser Automation</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-label">APIs &amp; Cloud:</span>
+        <span class="skill-value">FastAPI, REST APIs, Telegram Bot API, NVIDIA API, Groq API, Firebase, DigitalOcean, Supabase, GitHub</span>
       </div>
       <div class="skill-row">
         <span class="skill-label">Databases:</span>
-        <span class="skill-value">SQL, Firebase Realtime Database</span>
+        <span class="skill-value">Supabase (pgvector), SQL, Firebase Realtime Database, SQLite</span>
       </div>
       <div class="skill-row">
         <span class="skill-label">Tools &amp; Platforms:</span>
-        <span class="skill-value">Git, Google Antigravity IDE, VS Code</span>
+        <span class="skill-value">Git, VS Code, Streamlit</span>
       </div>
       <div class="skill-row">
         <span class="skill-label">Soft Skills:</span>
-        <span class="skill-value">Cross-Functional Communication, Problem Solving, Analytical Thinking, Collaboration</span>
+        <span class="skill-value">Cross-Functional Communication, Problem Solving, Analytical Thinking</span>
       </div>
     </div>
   </section>
