@@ -2,36 +2,89 @@
 
 # ✦ Prashik Fulke — Personal Portfolio
 
-**A premium, single-page portfolio built with Next.js 14, Three.js & Framer Motion**
+**AI & Data Science undergraduate · building intelligent systems at the intersection of ML and software engineering**
 
-[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-Visit_Portfolio-C2D099?style=for-the-badge&labelColor=0a0a0a)](https://github.com/PrashikFulke/Prashik-Portfolio)
+[![🌐 Live Site](https://img.shields.io/badge/🌐_Live_Site-prashikfulke.me-C2D099?style=for-the-badge&labelColor=0a0a0a)](https://prashikfulke.me)
 [![Next.js](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3-38BDF8?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 [![Three.js](https://img.shields.io/badge/Three.js-r162-white?style=for-the-badge&logo=three.js&logoColor=black)](https://threejs.org/)
 
+<br/>
+
+> **→ Visit the live portfolio at [prashikfulke.me](https://prashikfulke.me)**
+
 </div>
 
 ---
 
-## 📖 Overview
+## 👋 About Me
 
-A high-performance, fully responsive personal portfolio website showcasing projects, skills, and professional experience. Built with a focus on **premium UX**, smooth scroll-driven animations, and a glassmorphism design system — designed to make a strong first impression.
+I'm **Prashik Fulke**, an Artificial Intelligence & Data Science undergraduate at Anjuman College of Engineering (B.Tech, Expected 2026). I'm passionate about solving real-world problems by combining intelligent data models with robust software architecture — from training deep learning models for cybersecurity to building scalable, user-facing web applications.
+
+- 🔬 **Focus Areas:** Machine Learning, Deep Learning, Anomaly Detection, Multi-Agent LLM Systems
+- 🛠️ **Stack:** Python · Next.js · Firebase · DigitalOcean · LangGraph · Supabase
+- 🧠 **Currently Building:** Autonomous AI agents and full-stack data-driven applications
+- 📄 **Resume:** [Download PDF](https://prashikfulke.me/Prashik_Fulke_Resume.pdf)
 
 ---
 
-## ✨ Features
+## 🗂️ What's on This Portfolio
+
+| Section | Description |
+|---|---|
+| **Hero** | Name, tagline, availability status & quick links |
+| **About Me** | Background, core strengths & academic foundation |
+| **Tech Arsenal** | Skills categorized by AI/ML, Languages, and Infrastructure |
+| **Featured Projects** | Scrollable project cards with click-to-expand case studies |
+| **Experience & Education** | Animated vertical timeline with scroll-driven Pac-Man indicator |
+
+---
+
+## 🚀 Featured Projects
+
+### 🤖 Baxton — Autonomous AI Web Agent
+A fully autonomous, stateful AI agent capable of continuous research, negotiation, and social engagement across SPAs like Reddit and Instagram. Built with a 5-role LLM architecture (Orchestrator, Router, Vision, Decider, Drafter) using LangGraph, LangChain, Supabase pgvector for long-term memory, and stealth Playwright browser automation.
+
+`Python` `FastAPI` `LangGraph` `LangChain` `Playwright` `Supabase` `Groq` `NVIDIA APIs`
+
+### 🌐 OSAgent
+A highly responsive web application backed by Firebase with a secure DigitalOcean deployment pipeline — achieving a 30% improvement in load performance.
+
+`HTML/CSS` `Firebase` `DigitalOcean` → [osagent.tech](https://osagent.tech/)
+
+### 🔐 AI Log Monitoring & Threat Detection *(Softsense Internship)*
+Built ML models for real-time network anomaly detection, reducing false positives by 30% and achieving 90%+ detection accuracy on live log streams.
+
+`Python` `Machine Learning` `Anomaly Detection`
+
+---
+
+## ✨ Site Features
 
 | Feature | Description |
 |---|---|
-| 🎨 **Glassmorphism UI** | Layered frosted-glass panels with subtle borders and blur |
-| 🌌 **3D Particle Background** | Interactive Three.js canvas that reacts to ob=verall mouse movement |
+| 🎨 **Glassmorphism UI** | Layered frosted-glass panels with blur and subtle borders |
+| 🌌 **3D Particle Background** | Interactive Three.js canvas that reacts to mouse movement |
 | 🎬 **Scroll Animations** | Framer Motion viewport-triggered entrance animations |
-| 🟡 **Pac-Man Timeline** | Animated Pac-Man that travels down the experience timeline on scroll |
-| 📱 **Fully Responsive** | Mobile-first layout that adapts seamlessly across all screen sizes |
-| 🗂️ **Project Modal** | Click-to-expand project cards with detailed case study descriptions |
-| 🔍 **SEO Optimized** | Dynamic metadata, Open Graph tags, `robots.js`, and `sitemap.js` |
-| ⚡ **Performance First** | CSS optimization, console stripping in production, gzip compression |
+| 🟡 **Pac-Man Timeline** | Animated Pac-Man that scrolls down the experience timeline |
+| 📱 **Fully Responsive** | Mobile-first layout that adapts across all screen sizes |
+| 🗂️ **Project Modals** | Click-to-expand cards with full case study descriptions |
+| 🔍 **SEO Optimized** | Open Graph tags, `robots.js`, `sitemap.js`, and meta descriptions |
+| ⚡ **Performance First** | gzip compression, CSS optimization, console stripping in production |
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+|---|---|
+| **Framework** | [Next.js 14](https://nextjs.org/) — App Router |
+| **UI Library** | [React 18](https://reactjs.org/) |
+| **Styling** | [Tailwind CSS v3](https://tailwindcss.com/) + Custom CSS Variables |
+| **Animations** | [Framer Motion](https://www.framer.com/motion/) |
+| **3D Graphics** | [Three.js](https://threejs.org/) |
+| **Icons** | [Lucide React](https://lucide.dev/) |
 
 ---
 
@@ -39,99 +92,57 @@ A high-performance, fully responsive personal portfolio website showcasing proje
 
 ```
 Portfolio/
-├── app/                    # Next.js App Router
-│   ├── layout.jsx          # Root layout with metadata & global styles
+├── app/
+│   ├── layout.jsx          # Root layout — metadata, Open Graph, fonts
 │   ├── page.jsx            # Main single-page application
-│   ├── globals.css         # Global CSS & design token variables
-│   ├── robots.js           # SEO: robots.txt generation
-│   └── sitemap.js          # SEO: sitemap.xml generation
+│   ├── globals.css         # Design system — CSS tokens & glassmorphism utilities
+│   ├── robots.js           # Auto-generated robots.txt
+│   └── sitemap.js          # Auto-generated sitemap.xml
 │
-├── components/             # Reusable React components
-│   ├── Navbar.jsx          # Sticky navigation with smooth-scroll links
-│   ├── Footer.jsx          # Site footer with social links
-│   └── ThreeBackground.jsx # Three.js animated particle canvas
+├── components/
+│   ├── Navbar.jsx          # Sticky nav with smooth-scroll section links
+│   ├── Footer.jsx          # Footer with social links
+│   └── ThreeBackground.jsx # Interactive Three.js particle canvas
 │
-├── public/                 # Static assets
+├── public/
 │   ├── Prashik_Fulke_Resume.pdf
 │   └── resume.html
 │
-├── next.config.mjs         # Next.js configuration (compression, security)
-├── tailwind.config.js      # Tailwind CSS configuration
-└── postcss.config.js       # PostCSS configuration
+├── next.config.mjs         # Compression, security headers, CSS optimization
+├── tailwind.config.js
+└── postcss.config.js
 ```
 
 ---
 
-## 🛠️ Tech Stack
-
-- **Framework:** [Next.js 14](https://nextjs.org/) (App Router)
-- **UI Library:** [React 18](https://reactjs.org/)
-- **Styling:** [Tailwind CSS v3](https://tailwindcss.com/) + Custom CSS Variables
-- **Animations:** [Framer Motion](https://www.framer.com/motion/)
-- **3D Graphics:** [Three.js](https://threejs.org/)
-- **Icons:** [Lucide React](https://lucide.dev/)
-
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- **Node.js** ≥ 18.17
-- **npm** ≥ 9
-
-### Installation & Development
+## 🏁 Run Locally
 
 ```bash
-# 1. Clone the repository
+# Clone the repository
 git clone https://github.com/PrashikFulke/Prashik-Portfolio.git
-
-# 2. Navigate into the project directory
 cd Prashik-Portfolio
 
-# 3. Install dependencies
+# Install dependencies
 npm install
 
-# 4. Start the development server
+# Start development server
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-### Available Scripts
-
-| Command | Description |
-|---|---|
-| `npm run dev` | Start local development server |
-| `npm run build` | Create an optimized production build |
-| `npm run start` | Serve the production build locally |
-| `npm run lint` | Run ESLint for code quality checks |
-
----
-
-## 🏗️ Sections
-
-1. **Hero** — Full Name, tagline, availability badge, and CTA links
-2. **About Me** — Background, focus areas, and academic foundation
-3. **Tech Arsenal** — Skills grouped by category (AI/ML, Languages, Infrastructure)
-4. **Featured Projects** — Horizontally scrollable cards with expandable case studies
-5. **Experience & Education** — Animated vertical timeline with scroll-driven Pac-Man indicator
+Open [http://localhost:3000](http://localhost:3000) · Requires **Node.js ≥ 18.17**
 
 ---
 
 ## 🤝 Connect
 
-<div align="left">
-
+[![Portfolio](https://img.shields.io/badge/🌐_Portfolio-prashikfulke.me-C2D099?style=flat-square&labelColor=0a0a0a)](https://prashikfulke.me)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-prashik--fulke-0A66C2?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/prashik-fulke/)
 [![GitHub](https://img.shields.io/badge/GitHub-PrashikFulke-181717?style=flat-square&logo=github)](https://github.com/PrashikFulke)
-
-</div>
 
 ---
 
 <div align="center">
 
-**Designed & built by Prashik Fulke** · © 2025
+**Designed & built by Prashik Fulke** &nbsp;·&nbsp; [prashikfulke.me](https://prashikfulke.me) &nbsp;·&nbsp; © 2025
 
 </div>
