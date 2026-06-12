@@ -25,7 +25,7 @@ A high-performance, fully responsive personal portfolio website showcasing proje
 | Feature | Description |
 |---|---|
 | 🎨 **Glassmorphism UI** | Layered frosted-glass panels with subtle borders and blur |
-| 🌌 **3D Particle Background** | Interactive Three.js canvas that reacts to mouse movement |
+| 🌌 **3D Particle Background** | Interactive Three.js canvas that reacts to ob=verall mouse movement |
 | 🎬 **Scroll Animations** | Framer Motion viewport-triggered entrance animations |
 | 🟡 **Pac-Man Timeline** | Animated Pac-Man that travels down the experience timeline on scroll |
 | 📱 **Fully Responsive** | Mobile-first layout that adapts seamlessly across all screen sizes |
@@ -111,7 +111,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## 🏗️ Sections
 
-1. **Hero** — Name, tagline, availability badge, and CTA links
+1. **Hero** — Full Name, tagline, availability badge, and CTA links
 2. **About Me** — Background, focus areas, and academic foundation
 3. **Tech Arsenal** — Skills grouped by category (AI/ML, Languages, Infrastructure)
 4. **Featured Projects** — Horizontally scrollable cards with expandable case studies
