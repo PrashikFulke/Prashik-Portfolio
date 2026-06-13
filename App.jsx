@@ -348,7 +348,7 @@ export default function App() {
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
               </a>
               <div className="grid grid-cols-3 gap-2 sm:gap-4">
-                <a href="mailto:prashikfulke@example.com" className="glass-btn text-center py-3 px-2 sm:px-4 rounded-xl font-medium flex items-center justify-center gap-2">
+                <a href="mailto:fulkeprashik@gmail.com" className="glass-btn text-center py-3 px-2 sm:px-4 rounded-xl font-medium flex items-center justify-center gap-2">
                   <Mail className="w-5 h-5" /> <span className="hidden sm:inline">Email</span>
                 </a>
                 <a href="https://www.linkedin.com/in/prashik-fulke/" target="_blank" rel="noopener noreferrer" className="glass-btn text-center py-3 px-2 sm:px-4 rounded-xl font-medium flex items-center justify-center gap-2">
@@ -625,7 +625,7 @@ Processed and analyzed real-time log streams for instantaneous threat alerts usi
                 <a href="https://www.linkedin.com/in/prashik-fulke/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full glass-panel flex items-center justify-center hover:text-primary hover:border-primary hover:-translate-y-1 transition-all group" aria-label="LinkedIn">
                   <Linkedin className="w-4 h-4 group-hover:scale-110 transition-transform" />
                 </a>
-                <a href="mailto:prashikfulke@example.com" className="w-10 h-10 rounded-full glass-panel flex items-center justify-center hover:text-primary hover:border-primary hover:-translate-y-1 transition-all group" aria-label="Email">
+                <a href="mailto:fulkeprashik@gmail.com" className="w-10 h-10 rounded-full glass-panel flex items-center justify-center hover:text-primary hover:border-primary hover:-translate-y-1 transition-all group" aria-label="Email">
                   <Mail className="w-4 h-4 group-hover:scale-110 transition-transform" />
                 </a>
                 <a href="https://github.com/PrashikFulke" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full glass-panel flex items-center justify-center hover:text-primary hover:border-primary hover:-translate-y-1 transition-all group" aria-label="GitHub">
@@ -636,7 +636,7 @@ Processed and analyzed real-time log streams for instantaneous threat alerts usi
 
             {/* Right Side */}
             <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="flex flex-col items-start lg:items-end justify-center gap-4">
-              <a href="mailto:prashikfulke@example.com" className="glass-panel btn-glow px-6 py-3 rounded-xl text-base md:text-lg font-bold tracking-widest transition-all hover:text-primary">
+              <a href="mailto:fulkeprashik@gmail.com" className="glass-panel btn-glow px-6 py-3 rounded-xl text-base md:text-lg font-bold tracking-widest transition-all hover:text-primary">
                 [ WORK WITH ME ]
               </a>
 

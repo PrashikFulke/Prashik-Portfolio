@@ -81,7 +81,7 @@ export default function Home() {
               <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
             </a>
             <div className="grid grid-cols-3 gap-2 sm:gap-4">
-              <a href="mailto:prashikfulke@example.com" className="glass-btn text-center py-3 px-2 sm:px-4 rounded-xl font-medium flex items-center justify-center gap-2">
+              <a href="mailto:fulkeprashik@gmail.com" className="glass-btn text-center py-3 px-2 sm:px-4 rounded-xl font-medium flex items-center justify-center gap-2">
                 <Mail className="w-5 h-5" /> <span className="hidden sm:inline">Email</span>
               </a>
               <a href="https://www.linkedin.com/in/prashik-fulke/" target="_blank" rel="noopener noreferrer" className="glass-btn text-center py-3 px-2 sm:px-4 rounded-xl font-medium flex items-center justify-center gap-2">

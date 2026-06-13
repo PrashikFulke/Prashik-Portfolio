@@ -17,7 +17,7 @@ export default function Footer() {
               <a href="https://www.linkedin.com/in/prashik-fulke/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full glass-panel flex items-center justify-center hover:text-primary hover:border-primary hover:-translate-y-1 transition-all group" aria-label="LinkedIn">
                 <Linkedin className="w-4 h-4 group-hover:scale-110 transition-transform" />
               </a>
-              <a href="mailto:prashikfulke@example.com" className="w-10 h-10 rounded-full glass-panel flex items-center justify-center hover:text-primary hover:border-primary hover:-translate-y-1 transition-all group" aria-label="Email">
+              <a href="mailto:fulkeprashik@gmail.com" className="w-10 h-10 rounded-full glass-panel flex items-center justify-center hover:text-primary hover:border-primary hover:-translate-y-1 transition-all group" aria-label="Email">
                 <Mail className="w-4 h-4 group-hover:scale-110 transition-transform" />
               </a>
               <a href="https://github.com/PrashikFulke" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full glass-panel flex items-center justify-center hover:text-primary hover:border-primary hover:-translate-y-1 transition-all group" aria-label="GitHub">
@@ -27,7 +27,7 @@ export default function Footer() {
           </motion.div>
 
           <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="flex flex-col items-start lg:items-end justify-center gap-6">
-            <a href="mailto:prashikfulke@example.com" className="glass-panel btn-glow px-6 py-3 rounded-xl text-base md:text-lg font-bold tracking-widest transition-all hover:text-primary">
+            <a href="mailto:fulkeprashik@gmail.com" className="glass-panel btn-glow px-6 py-3 rounded-xl text-base md:text-lg font-bold tracking-widest transition-all hover:text-primary">
               [ WORK WITH ME ]
             </a>
 
