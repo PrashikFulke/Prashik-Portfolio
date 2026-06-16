@@ -54,6 +54,37 @@ export default function Home() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "WebSite",
+                "@id": "https://prashikfulke.me/#website",
+                "url": "https://prashikfulke.me/",
+                "name": "Prashik Fulke Portfolio"
+              },
+              {
+                "@type": "SiteNavigationElement",
+                "hasPart": [
+                  {
+                    "@type": "WebPage",
+                    "name": "Most Recent Projects from Prashik",
+                    "url": "https://prashikfulke.me/#projects"
+                  },
+                  {
+                    "@type": "WebPage",
+                    "name": "Download Prashik's Resume",
+                    "url": "https://prashikfulke.me/Prashik_Fulke_Resume.pdf"
+                  }
+                ]
+              }
+            ]
+          })
+        }}
+      />
       <main id="main-content" className="relative z-10 max-w-6xl mx-auto px-6 sm:px-12 pt-40 pb-24 flex flex-col gap-32">
       {/* Hero Section */}
       <section className="min-h-[75vh] flex flex-col justify-center items-start pt-10">
@@ -76,7 +107,7 @@ export default function Home() {
           </p>
 
           <div className="flex flex-col gap-4 w-full max-w-md">
-            <a href="#projects" className="glass-btn w-full text-center py-4 rounded-xl font-medium text-lg flex items-center justify-center gap-2 group">
+            <a href="#projects" aria-label="Most Recent Projects from Prashik" title="Most Recent Projects from Prashik" className="glass-btn w-full text-center py-4 rounded-xl font-medium text-lg flex items-center justify-center gap-2 group">
               View Projects
               <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
             </a>

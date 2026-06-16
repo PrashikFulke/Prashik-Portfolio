@@ -32,7 +32,7 @@ export default function Footer() {
             </a>
 
             <div className="flex flex-col items-start lg:items-end gap-2 mt-2">
-              <a href="/Prashik_Fulke_Resume.pdf" target="_blank" rel="noopener noreferrer" className="text-white/70 text-xs hover:text-primary transition-colors flex items-center gap-2 group font-medium">
+              <a href="Prashik_Fulke_Resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Download Prashik's Resume" title="Download Prashik's Resume" className="text-white/70 text-xs hover:text-primary transition-colors flex items-center gap-2 group font-medium">
                 <Download className="w-3 h-3 group-hover:-translate-y-0.5 transition-transform" /> Download Resume
               </a>
               <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-white/70 text-xs hover:text-primary transition-colors flex items-center gap-2 group font-medium">
