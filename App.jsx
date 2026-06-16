@@ -317,6 +317,38 @@ export default function App() {
         html { scroll-behavior: smooth; }
       `}} />
 
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "WebSite",
+                "@id": "https://prashikfulke.me/#website",
+                "url": "https://prashikfulke.me/",
+                "name": "Prashik Fulke Portfolio"
+              },
+              {
+                "@type": "SiteNavigationElement",
+                "hasPart": [
+                  {
+                    "@type": "WebPage",
+                    "name": "Most Recent Projects from Prashik",
+                    "url": "https://prashikfulke.me/#projects"
+                  },
+                  {
+                    "@type": "WebPage",
+                    "name": "Download Prashik's Resume",
+                    "url": "https://prashikfulke.me/Prashik_Fulke_Resume.pdf"
+                  }
+                ]
+              }
+            ]
+          })
+        }}
+      />
+
       <ThreeBackground />
       <Navbar />
 
@@ -343,7 +375,7 @@ export default function App() {
             </p>
 
             <div className="flex flex-col gap-4 w-full max-w-md">
-              <a href="#projects" className="glass-btn w-full text-center py-4 rounded-xl font-medium text-lg flex items-center justify-center gap-2 group">
+              <a href="#projects" aria-label="Most Recent Projects from Prashik" title="Most Recent Projects from Prashik" className="glass-btn w-full text-center py-4 rounded-xl font-medium text-lg flex items-center justify-center gap-2 group">
                 View Projects
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
               </a>
@@ -641,7 +673,7 @@ Processed and analyzed real-time log streams for instantaneous threat alerts usi
               </a>
 
               <div className="flex flex-col items-start lg:items-end gap-2 mt-1">
-                <a href="Prashik_Fulke_Resume.pdf" download className="text-white/70 text-xs hover:text-primary transition-colors flex items-center gap-2 group font-medium">
+                <a href="Prashik_Fulke_Resume.pdf" download aria-label="Download Prashik's Resume" title="Download Prashik's Resume" className="text-white/70 text-xs hover:text-primary transition-colors flex items-center gap-2 group font-medium">
                   <Download className="w-3 h-3 group-hover:-translate-y-0.5 transition-transform" /> Download Resume
                 </a>
                 <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-white/70 text-xs hover:text-primary transition-colors flex items-center gap-2 group font-medium">
