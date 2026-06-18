@@ -15,44 +15,37 @@
 
     body {
       font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
-      font-size: 10pt;
-      line-height: 1.4;
+      font-size: 9pt;
+      line-height: 1.3;
       color: #1a1a1a;
       background: #ffffff;
-      max-width: 800px;
+      max-width: 760px;
       margin: 0 auto;
-      padding: 20px 30px;
+      padding: 16px 24px;
     }
 
     /* Header */
     .header {
-      border-bottom: 2px solid #1a1a1a;
-      padding-bottom: 8px;
-      margin-bottom: 12px;
+      border-bottom: 1.5px solid #1a1a1a;
+      padding-bottom: 6px;
+      margin-bottom: 8px;
       text-align: center;
     }
 
     .header h1 {
-      font-size: 26pt;
+      font-size: 20pt;
       font-weight: 700;
-      letter-spacing: -0.5px;
+      letter-spacing: -0.3px;
       color: #111;
-      margin-bottom: 8px;
-    }
-
-    .header .location {
-      display: inline-block;
-      font-size: 9.5pt;
-      color: #555;
-      font-weight: 400;
+      margin-bottom: 4px;
     }
 
     .contact-row {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 12px;
-      font-size: 9.5pt;
+      gap: 8px;
+      font-size: 8.5pt;
       color: #333;
     }
 
@@ -62,68 +55,64 @@
       font-weight: 500;
     }
 
-    .contact-row a:hover {
-      text-decoration: underline;
-    }
-
     /* Sections */
     section {
-      margin-bottom: 10px;
+      margin-bottom: 7px;
     }
 
     .section-title {
-      font-size: 9.5pt;
+      font-size: 8.5pt;
       font-weight: 700;
       letter-spacing: 1px;
       text-transform: uppercase;
       color: #111;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 2px;
-      margin-bottom: 6px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 1px;
+      margin-bottom: 5px;
     }
 
     /* Summary */
     .summary p {
-      font-size: 9.5pt;
+      font-size: 8.5pt;
       color: #333;
-      line-height: 1.5;
+      line-height: 1.35;
     }
 
     /* Experience & Project entries */
     .entry {
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .entry-header {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      gap: 8px;
+      gap: 6px;
       flex-wrap: wrap;
-      margin-bottom: 2px;
+      margin-bottom: 1px;
     }
 
     .entry-title {
-      font-size: 10.5pt;
+      font-size: 9.5pt;
       font-weight: 700;
       color: #111;
     }
 
     .entry-date {
-      font-size: 9.5pt;
-      color: #111;
+      font-size: 8.5pt;
+      color: #333;
       white-space: nowrap;
     }
 
     .entry-org {
-      font-size: 9.5pt;
-      color: #444;
-      margin-bottom: 4px;
+      font-size: 8.5pt;
+      color: #555;
+      margin-bottom: 2px;
       font-style: italic;
     }
 
     .entry-link {
-      font-size: 9.5pt;
+      font-size: 8.5pt;
       color: #2d6a4f;
       text-decoration: none;
     }
@@ -131,24 +120,24 @@
     ul.bullet-list {
       list-style: none;
       padding-left: 0;
-      margin-top: 4px;
+      margin-top: 2px;
     }
 
     ul.bullet-list li {
       position: relative;
-      padding-left: 14px;
+      padding-left: 12px;
       color: #333;
-      font-size: 9.5pt;
-      margin-bottom: 2px;
-      line-height: 1.35;
+      font-size: 8.5pt;
+      margin-bottom: 1px;
+      line-height: 1.3;
     }
 
     ul.bullet-list li::before {
-      content: '•';
+      content: 'â€¢';
       position: absolute;
       left: 0;
       color: #111;
-      font-size: 10pt;
+      font-size: 9pt;
       top: 0px;
     }
 
@@ -157,7 +146,7 @@
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      margin-bottom: 4px;
+      margin-bottom: 3px;
     }
 
     .edu-entry-content {
@@ -165,33 +154,35 @@
     }
 
     .edu-entry .degree {
-      font-size: 10pt;
+      font-size: 9pt;
       font-weight: 700;
       color: #111;
     }
 
     .edu-entry .institution {
-      font-size: 9.5pt;
+      font-size: 8.5pt;
       color: #444;
       font-style: italic;
     }
 
     .edu-entry .edu-meta {
-      font-size: 9.5pt;
-      color: #111;
+      font-size: 8.5pt;
+      color: #333;
       text-align: right;
+      white-space: nowrap;
+      padding-left: 8px;
     }
 
     /* Skills */
     .skills-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 4px;
+      gap: 2px;
     }
 
     .skill-row {
-      font-size: 9.5pt;
-      line-height: 1.4;
+      font-size: 8.5pt;
+      line-height: 1.3;
     }
 
     .skill-label {
@@ -204,8 +195,14 @@
     }
 
     @media print {
+      @page {
+        size: A4;
+        margin: 10mm 12mm;
+      }
       body {
-        padding: 15px 20px;
+        padding: 0;
+        max-width: 100%;
+        font-size: 8.5pt;
       }
     }
   </style>
@@ -216,7 +213,7 @@
   <div class="header">
     <h1>Prashik Fulke</h1>
     <div class="contact-row">
-      <span class="location">Nagpur, Maharashtra, India</span> |
+      <span>Nagpur, Maharashtra, India</span> |
       <span><a href="mailto:fulkeprashik@gmail.com">fulkeprashik@gmail.com</a></span> |
       <span>7558604743</span> |
       <a href="https://linkedin.com/in/prashik-fulke" target="_blank">linkedin.com/in/prashik-fulke</a> |
@@ -226,21 +223,21 @@
 
   <!-- Summary -->
   <section class="summary">
-    <div class="section-title">SUMMARY</div>
-    <p>Final-year B.Tech student in Artificial Intelligence &amp; Data Science, building production-grade autonomous AI agents and LLM-orchestration systems. Hands-on experience with multi-agent architectures (LangGraph), RAG memory (Supabase pgvector), browser automation (Playwright), and full-stack deployment. Currently seeking AI/ML engineering and AI agent development internships.</p>
+    <div class="section-title">Summary</div>
+    <p>Final-year B.Tech student in AI &amp; Data Science, building production-grade autonomous AI agents and LLM-orchestration systems. Hands-on experience with multi-agent architectures (LangGraph), RAG memory (Supabase pgvector), browser automation (Playwright), and full-stack deployment. Seeking AI/ML engineering and AI agent development internships.</p>
   </section>
 
   <!-- Experience -->
   <section>
-    <div class="section-title">EXPERIENCE</div>
+    <div class="section-title">Experience</div>
     <div class="entry">
       <div class="entry-header">
-        <span class="entry-title">Intern — Softsense Technoserve (India) Private Limited</span>
-        <span class="entry-date">March 2025 – April 2025</span>
+        <span class="entry-title">Intern &mdash; Softsense Technoserve (India) Private Limited</span>
+        <span class="entry-date">March 2025 &ndash; April 2025</span>
       </div>
       <div class="entry-org">Nagpur, India</div>
       <ul class="bullet-list">
-        <li>Built an AI-driven log monitoring system using machine learning and deep learning to detect real-time security anomalies.</li>
+        <li>Built an AI-driven log monitoring system using ML and deep learning to detect real-time security anomalies.</li>
         <li>Reduced false positives by 30% and achieved 90%+ detection accuracy through model tuning and feature engineering.</li>
         <li>Developed a Streamlit-based dashboard for live log analysis and automated alerts.</li>
       </ul>
@@ -249,19 +246,19 @@
 
   <!-- Projects -->
   <section>
-    <div class="section-title">PROJECTS</div>
+    <div class="section-title">Projects</div>
 
     <div class="entry">
       <div class="entry-header">
-        <span class="entry-title">Baxton — Autonomous AI Social Media Agent</span>
+        <span class="entry-title">Baxton &mdash; Autonomous AI Social Media Agent</span>
         <span class="entry-date">2025</span>
       </div>
       <div class="entry-org">Personal Project</div>
       <ul class="bullet-list">
-        <li>Engineered a fully autonomous AI agent using LangGraph StateGraph, FastAPI, and Playwright that manages Reddit and Instagram accounts end-to-end via a Telegram Bot — handling outreach, multi-turn conversations, and reporting with zero human intervention.</li>
+        <li>Engineered a fully autonomous AI agent using LangGraph StateGraph, FastAPI, and Playwright managing Reddit and Instagram end-to-end via Telegram Bot &mdash; outreach, multi-turn conversations, and reporting with zero human intervention.</li>
         <li>Designed a decoupled architecture: a 70B LLM Orchestrator (NVIDIA Llama 3.3) for real-time command execution and a Background Radar Daemon for asynchronous inbox monitoring and autonomous reply management.</li>
-        <li>Implemented a Tri-Core Cognitive Architecture (Orchestrator, Decision Engine, Persona-Voiced Drafter) deployed live to collect structured product reviews from real customers with zero manual follow-up.</li>
-        <li>Built a Shadow DOM-piercing Playwright scraper with a recursive TreeWalker to extract live chat from WebSocket-rendered Reddit Chat, and integrated Supabase pgvector RAG for cross-session persona consistency across platforms.</li>
+        <li>Implemented a Tri-Core Cognitive Architecture (Orchestrator, Decision Engine, Persona-Voiced Drafter) deployed live to collect structured product reviews with zero manual follow-up.</li>
+        <li>Built a Shadow DOM-piercing Playwright scraper with a recursive TreeWalker and integrated Supabase pgvector RAG for cross-session persona consistency.</li>
       </ul>
     </div>
 
@@ -274,21 +271,21 @@
       <ul class="bullet-list">
         <li>Designed and developed a responsive front-end using HTML &amp; CSS, improving page load performance by ~30%.</li>
         <li>Built and integrated backend services using Firebase, enabling real-time updates and secure data handling.</li>
-        <li>Managed version control and collaboration through GitHub with structured deployments, and deployed/hosted the application on DigitalOcean, maintaining uptime and scalability.</li>
+        <li>Managed version control through GitHub and deployed/hosted the application on DigitalOcean.</li>
       </ul>
     </div>
   </section>
 
   <!-- Education -->
   <section>
-    <div class="section-title">EDUCATION</div>
+    <div class="section-title">Education</div>
 
     <div class="edu-entry">
       <div class="edu-entry-content">
         <div class="degree">B.Tech in Artificial Intelligence &amp; Data Science</div>
         <div class="institution">Anjuman College of Engineering and Technology, RTMNU, Nagpur | CGPA: 6.89</div>
       </div>
-      <div class="edu-meta">2022 – 2026 (Expected)</div>
+      <div class="edu-meta">2022 &ndash; 2026 (Expected)</div>
     </div>
 
     <div class="edu-entry">
@@ -296,7 +293,7 @@
         <div class="degree">12th (HSC)</div>
         <div class="institution">Dada Ramchand Bakhru Sindhu Mahavidyalaya, Nagpur | 57%</div>
       </div>
-      <div class="edu-meta">2021 – 2022</div>
+      <div class="edu-meta">2021 &ndash; 2022</div>
     </div>
 
     <div class="edu-entry">
@@ -304,13 +301,13 @@
         <div class="degree">10th (SSC)</div>
         <div class="institution">St. John's High School, Nagpur | 82%</div>
       </div>
-      <div class="edu-meta">2019 – 2020</div>
+      <div class="edu-meta">2019 &ndash; 2020</div>
     </div>
   </section>
 
   <!-- Skills -->
   <section>
-    <div class="section-title">SKILLS</div>
+    <div class="section-title">Skills</div>
     <div class="skills-grid">
       <div class="skill-row">
         <span class="skill-label">Programming &amp; Scripting:</span>
