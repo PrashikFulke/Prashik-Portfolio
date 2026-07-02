@@ -15,7 +15,7 @@ export const metadata = {
     default: 'Prashik Fulke | AI & Data Science Portfolio',
     template: '%s | Prashik Fulke',
   },
-  description: 'Portfolio of Prashik Fulke, an Artificial Intelligence and Data Science undergraduate specializing in Machine Learning, Deep Learning, and secure Web Architecture.',
+  description: 'Portfolio of Prashik Fulke, an Artificial Intelligence and Data Science graduate specializing in Machine Learning, Deep Learning, and secure Web Architecture.',
   keywords: ['Prashik Fulke', 'AI', 'Data Science', 'Machine Learning', 'Next.js', 'React', 'Cybersecurity', 'Portfolio'],
   authors: [{ name: 'Prashik Fulke' }],
   creator: 'Prashik Fulke',
@@ -24,7 +24,7 @@ export const metadata = {
     locale: 'en_US',
     url: 'https://prashikfulke.me',
     title: 'Prashik Fulke | AI & Data Science',
-    description: 'Portfolio of Prashik Fulke, an Artificial Intelligence and Data Science undergraduate specializing in Machine Learning, Deep Learning, and secure Web Architecture.',
+    description: 'Portfolio of Prashik Fulke, an Artificial Intelligence and Data Science graduate specializing in Machine Learning, Deep Learning, and secure Web Architecture.',
     siteName: 'Prashik Fulke Portfolio',
     images: [
       {
@@ -38,7 +38,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Prashik Fulke | AI & Data Science',
-    description: 'Portfolio of Prashik Fulke, an Artificial Intelligence and Data Science undergraduate specializing in Machine Learning, Deep Learning, and secure Web Architecture.',
+    description: 'Portfolio of Prashik Fulke, an Artificial Intelligence and Data Science graduate specializing in Machine Learning, Deep Learning, and secure Web Architecture.',
     images: ['/placeholder-og.jpg'],
   },
   robots: {

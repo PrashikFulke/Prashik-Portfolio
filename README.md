@@ -2,7 +2,7 @@
 
 # ✦ Prashik Fulke — Personal Portfolio
 
-**AI & Data Science undergraduate · building intelligent systems at the intersection of ML and software engineering**
+**AI & Data Science Graduate · building intelligent systems at the intersection of ML and software engineering**
 
 [![🌐 Live Site](https://img.shields.io/badge/🌐_Live_Site-prashikfulke.me-C2D099?style=for-the-badge&labelColor=0a0a0a)](https://prashikfulke.me)
 [![Next.js](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
@@ -20,7 +20,7 @@
 
 ## 👋 About Me
 
-I'm **Prashik Fulke**, an Artificial Intelligence & Data Science undergraduate at Anjuman College of Engineering (B.Tech, Expected 2026). I'm passionate about solving real-world problems by combining intelligent data models with robust software architecture — from training deep learning models for cybersecurity to building scalable, user-facing web applications.
+I'm **Prashik Fulke**, an Artificial Intelligence & Data Science Graduate from Anjuman College of Engineering (B.Tech). I'm passionate about solving real-world problems by combining intelligent data models with robust software architecture — from training deep learning models for cybersecurity to building scalable, user-facing web applications.
 
 - 🔬 **Focus Areas:** Machine Learning, Deep Learning, Anomaly Detection, Multi-Agent LLM Systems
 - 🛠️ **Stack:** Python · Next.js · Firebase · DigitalOcean · LangGraph · Supabase

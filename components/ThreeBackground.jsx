@@ -40,12 +40,18 @@ export default function ThreeBackground() {
     )
     camera.position.z = 100
 
-    const renderer = new THREE.WebGLRenderer({
-      canvas,
-      alpha: true,
-      antialias: false,        // AA is invisible on a particle field, costs ~15-20% GPU
-      powerPreference: 'low-power', // Suggests GPU to enter low-power state
-    })
+    let renderer
+    try {
+      renderer = new THREE.WebGLRenderer({
+        canvas,
+        alpha: true,
+        antialias: false,        // AA is invisible on a particle field, costs ~15-20% GPU
+        powerPreference: 'low-power', // Suggests GPU to enter low-power state
+      })
+    } catch (e) {
+      console.warn("WebGL not supported or context creation failed:", e)
+      return
+    }
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, PIXEL_RATIO_CAP))
     renderer.setSize(window.innerWidth, window.innerHeight)
 
