@@ -407,7 +407,7 @@ export default function App() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {[
-                  { title: "Academic Foundation:", desc: "B.Tech in AI & Data Science at Anjuman College of Engineering and Technology, Nagpur (Expected 2026)." },
+                  { title: "Academic Foundation:", desc: "B.Tech in AI & Data Science at Anjuman College of Engineering and Technology, Nagpur (Graduated)." },
                   { title: "AI & Security Focus:", desc: "Building ML/DL models (Autoencoders, Isolation Forests) for real-time cybersecurity." },
                   { title: "Full-Stack Execution:", desc: "Python, HTML/CSS, Firebase, DigitalOcean deployment." },
                   { title: "Problem Solver:", desc: "Analytical thinker creating scalable, security-driven applications." }
@@ -612,8 +612,8 @@ Processed and analyzed real-time log streams for instantaneous threat alerts usi
               <div className="space-y-16">
                 {[
                   { title: "Intern (AI & Cybersecurity)", sub: "Softsense Technoserve | Mar 2025 - Apr 2025", desc: "Spearheaded the development of AI models for network anomaly detection. Successfully achieved over 90% detection accuracy in identifying anomalous network behaviors and potential threats.", align: "right" },
-                  { title: "B.Tech in AI & Data Science", sub: "Anjuman College of Engineering and Technology, Nagpur | Expected 2026", desc: "Focusing on machine learning, deep learning, and robust software engineering practices. Aggregate: 6.60.", align: "left" },
-                  { title: "12th (HSC)", sub: "Sindhu Mahavidyalaya | 2021 - 2022", desc: "Completed higher secondary education with a focus on science and mathematics. Secured 57%.", align: "right" }
+                  { title: "B.Tech in AI & Data Science", sub: "Anjuman College of Engineering and Technology, Nagpur | Graduated", desc: <>Focusing on machine learning, deep learning, and robust software engineering practices. Aggregate: <strong className="font-bold text-white">7.0</strong>.</>, align: "left" },
+                  { title: "12th (HSC)", sub: "Sindhu Mahavidyalaya | 2021 - 2022", desc: <>Completed higher secondary education with a focus on science and mathematics. Secured <strong className="font-bold text-white">58%</strong>.</>, align: "right" }
                 ].map((node, idx) => (
                   <motion.div
                     key={idx}
