@@ -21,10 +21,66 @@ const GlowingStar = ({ scrollYProgress, index }) => {
   );
 };
 
+const PROJECT_DATA = [
+  { 
+    date: "Independent Project, span of 2 weeks", 
+    title: "Baxton: Autonomous Agent", 
+    points: [
+      "Multi-Agent LLM Orchestration using LangGraph, LangChain, and multiple LLMs.",
+      "RAG & Persistent Memory via Supabase (PostgreSQL) with pgvector.",
+      "Autonomous Audience Engagement and Background DM Negotiation & Follow-up."
+    ], 
+    tags: ["Python", "FastAPI", "LangGraph/LangChain", "Playwright", "Supabase", "Groq/NVIDIA APIs", "SQLite"], 
+    hasLink: false, 
+    hasVideo: true, 
+    videoLink: "https://youtu.be/CXD_FSSa7FY",
+    extendedDescription: `Developed a fully autonomous, stateful AI web agent capable of executing continuous research, negotiation, and contextual engagement loops across modern React Single-Page Applications (SPAs) like Reddit and Instagram. Operating as a background daemon, the system utilizes stealth browser automation and a multi-tiered Large Language Model (LLM) architecture to read live chat interfaces, make deterministic conversational decisions, and synthesize unstructured social data into actionable intelligence dossiers.
+
+🛠️ What I Built (My Contributions)
+As the sole architect and developer of Baxton, I engineered the entire system from the ground up. Key technical achievements include:
+- Multi-Agent LLM Orchestration: Designed a 5-role LLM architecture (Orchestrator, Router, Vision, Decider, Drafter) using LangGraph, LangChain, and multiple LLM providers (NVIDIA Llama 3.3 70B, Groq Llama 3.1 8B, and Llama 4 Scout Vision).
+- RAG & Persistent Memory: Integrated Supabase (PostgreSQL) with pgvector and Google Gemini Embeddings to give the agent long-term memory, allowing it to adapt its tone and conversational playbook dynamically based on past interactions.
+- Robust Error Handling & Safeties: Implemented cognitive fallbacks (auto-cascading from a 70B to an 8B model on rate limits), session expiry detection, stale ticket garbage collection, and an "Anti-Loop Mandate" to prevent recursive tool executions.
+
+🎯 Key Use Cases
+- Autonomous Audience Engagement: Automatically monitors Instagram and Reddit timelines, analyzes image posts via the Vision LLM, and drops highly contextual, AI-generated comments in a specific brand voice.
+- Background DM Negotiation & Follow-up: Manages multi-turn DMs asynchronously. It can follow up on dead conversations, extract actionable insights into an "Executive Dossier" (Key Takeaway, Target Mood, Next Steps), and ping the admin via Telegram when a goal is reached.
+- Automated Research & Synthesis: Receives a vague query on Telegram, searches the live web (SearXNG) and social platforms (X/Reddit) concurrently, synthesizes the findings, and returns a concise, easy-to-read report.
+- Social Intelligence Recon: Autonomously views a target's Instagram stories or profile picture, uses the Vision model to analyze the content, and DMs a summary of what the target is up to.`
+  },
+  { 
+    date: "Independent Project, Aug 2025", 
+    title: "OSAgent", 
+    points: ["Engineered a highly responsive web application with a robust Firebase backend architecture.", "Deployed securely on DigitalOcean, achieving a 30% improvement in load performance."], 
+    tags: ["HTML/CSS", "Firebase", "DigitalOcean"], 
+    hasLink: true, 
+    link: "https://osagent.tech/",
+    extendedDescription: `Engineered a highly responsive web application with a robust Firebase backend architecture. Deployed securely on DigitalOcean, achieving a 30% improvement in load performance. Focus was to build a clean architecture and optimize the deployment pipeline for scaling.`
+  },
+  { 
+    date: "Softsense Intern, Mar - Apr 2025", 
+    title: "AI Log Monitoring & Threat Detection", 
+    points: ["Reduced false positives by 30% through advanced anomaly detection models.", "Processed and analyzed real-time log streams for instantaneous threat alerts."], 
+    tags: ["Python", "Machine Learning"], 
+    hasLink: false,
+    extendedDescription: `Spearheaded the development of AI models for network anomaly detection during my internship at Softsense Technoserve. Successfully reduced false positives by 30% through advanced anomaly detection models and achieved over 90% detection accuracy.
+
+Processed and analyzed real-time log streams for instantaneous threat alerts using robust machine learning techniques and Python.`
+  }
+];
+
 export default function Home() {
   const journeyRef = useRef(null);
   const scrollContainerRef = useRef(null);
   const [selectedProject, setSelectedProject] = useState(null);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('project')?.toLowerCase() === 'baxton') {
+      const targetProject = PROJECT_DATA.find(p => p.title.includes('Baxton'));
+      if (targetProject) setSelectedProject(targetProject);
+    }
+  }, []);
 
   // Prevent background scrolling when modal is open
   useEffect(() => {
@@ -218,53 +274,7 @@ export default function Home() {
               ref={scrollContainerRef}
               className="flex overflow-x-auto gap-8 snap-x snap-mandatory hide-scrollbar pb-8 pt-4 px-2 -mx-2"
             >
-              {[
-                { 
-                  date: "Independent Project, span of 2 weeks", 
-                  title: "Baxton: Autonomous Agent", 
-                  points: [
-                    "Multi-Agent LLM Orchestration using LangGraph, LangChain, and multiple LLMs.",
-                    "RAG & Persistent Memory via Supabase (PostgreSQL) with pgvector.",
-                    "Autonomous Audience Engagement and Background DM Negotiation & Follow-up."
-                  ], 
-                  tags: ["Python", "FastAPI", "LangGraph/LangChain", "Playwright", "Supabase", "Groq/NVIDIA APIs", "SQLite"], 
-                  hasLink: false, 
-                  hasVideo: true, 
-                  videoLink: "https://youtu.be/CXD_FSSa7FY",
-                  extendedDescription: `Developed a fully autonomous, stateful AI web agent capable of executing continuous research, negotiation, and contextual engagement loops across modern React Single-Page Applications (SPAs) like Reddit and Instagram. Operating as a background daemon, the system utilizes stealth browser automation and a multi-tiered Large Language Model (LLM) architecture to read live chat interfaces, make deterministic conversational decisions, and synthesize unstructured social data into actionable intelligence dossiers.
-
-🛠️ What I Built (My Contributions)
-As the sole architect and developer of Baxton, I engineered the entire system from the ground up. Key technical achievements include:
-- Multi-Agent LLM Orchestration: Designed a 5-role LLM architecture (Orchestrator, Router, Vision, Decider, Drafter) using LangGraph, LangChain, and multiple LLM providers (NVIDIA Llama 3.3 70B, Groq Llama 3.1 8B, and Llama 4 Scout Vision).
-- RAG & Persistent Memory: Integrated Supabase (PostgreSQL) with pgvector and Google Gemini Embeddings to give the agent long-term memory, allowing it to adapt its tone and conversational playbook dynamically based on past interactions.
-- Robust Error Handling & Safeties: Implemented cognitive fallbacks (auto-cascading from a 70B to an 8B model on rate limits), session expiry detection, stale ticket garbage collection, and an "Anti-Loop Mandate" to prevent recursive tool executions.
-
-🎯 Key Use Cases
-- Autonomous Audience Engagement: Automatically monitors Instagram and Reddit timelines, analyzes image posts via the Vision LLM, and drops highly contextual, AI-generated comments in a specific brand voice.
-- Background DM Negotiation & Follow-up: Manages multi-turn DMs asynchronously. It can follow up on dead conversations, extract actionable insights into an "Executive Dossier" (Key Takeaway, Target Mood, Next Steps), and ping the admin via Telegram when a goal is reached.
-- Automated Research & Synthesis: Receives a vague query on Telegram, searches the live web (SearXNG) and social platforms (X/Reddit) concurrently, synthesizes the findings, and returns a concise, easy-to-read report.
-- Social Intelligence Recon: Autonomously views a target's Instagram stories or profile picture, uses the Vision model to analyze the content, and DMs a summary of what the target is up to.`
-                },
-                { 
-                  date: "Independent Project, Aug 2025", 
-                  title: "OSAgent", 
-                  points: ["Engineered a highly responsive web application with a robust Firebase backend architecture.", "Deployed securely on DigitalOcean, achieving a 30% improvement in load performance."], 
-                  tags: ["HTML/CSS", "Firebase", "DigitalOcean"], 
-                  hasLink: true, 
-                  link: "https://osagent.tech/",
-                  extendedDescription: `Engineered a highly responsive web application with a robust Firebase backend architecture. Deployed securely on DigitalOcean, achieving a 30% improvement in load performance. Focus was to build a clean architecture and optimize the deployment pipeline for scaling.`
-                },
-                { 
-                  date: "Softsense Intern, Mar - Apr 2025", 
-                  title: "AI Log Monitoring & Threat Detection", 
-                  points: ["Reduced false positives by 30% through advanced anomaly detection models.", "Processed and analyzed real-time log streams for instantaneous threat alerts."], 
-                  tags: ["Python", "Machine Learning"], 
-                  hasLink: false,
-                  extendedDescription: `Spearheaded the development of AI models for network anomaly detection during my internship at Softsense Technoserve. Successfully reduced false positives by 30% through advanced anomaly detection models and achieved over 90% detection accuracy.
-
-Processed and analyzed real-time log streams for instantaneous threat alerts using robust machine learning techniques and Python.`
-                }
-              ].map((proj, idx) => (
+              {PROJECT_DATA.map((proj, idx) => (
                 <motion.div 
                   key={idx} 
                   whileHover={{ scale: 1.02 }} 
@@ -383,7 +393,10 @@ Processed and analyzed real-time log streams for instantaneous threat alerts usi
             initial={{ opacity: 0 }} 
             animate={{ opacity: 1 }} 
             exit={{ opacity: 0 }}
-            onClick={() => setSelectedProject(null)}
+            onClick={() => {
+              setSelectedProject(null);
+              window.history.replaceState({}, '', '/');
+            }}
             className="absolute inset-0 bg-black/60 backdrop-blur-sm cursor-pointer"
           />
           
@@ -396,7 +409,10 @@ Processed and analyzed real-time log streams for instantaneous threat alerts usi
           >
             <div className="p-8 md:p-10 overflow-y-auto hide-scrollbar">
               <button 
-                onClick={() => setSelectedProject(null)}
+                onClick={() => {
+                  setSelectedProject(null);
+                  window.history.replaceState({}, '', '/');
+                }}
                 className="absolute top-6 right-6 w-10 h-10 rounded-full glass-panel flex items-center justify-center text-white/50 hover:text-white transition-colors z-10"
               >
                 <X className="w-5 h-5" />
