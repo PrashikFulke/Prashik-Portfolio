@@ -78,7 +78,7 @@ const CERTIFICATE_DATA = [
     offeredBy: "Anthropic Education"
   },
   {
-    student: "Prashik Fulke",
+    student: "Prashik Fulke (Intern)",
     link: "https://drive.google.com/file/d/1TEUK9KxRtrJOuzmn2Q4IuwNvqqbMVFKA/view?usp=drive_link",
     date: "April 8, 2025",
     course: "AI Based Real-Time Log Monitoring",
