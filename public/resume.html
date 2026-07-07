@@ -40,26 +40,29 @@
       margin-bottom: 4px;
     }
 
-    .header .location {
-      display: inline-block;
-      font-size: 8.8pt;
-      color: #555;
-      font-weight: 400;
-    }
-
     .contact-row {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 10px;
+      gap: 12px;
       font-size: 8.8pt;
       color: #333;
     }
+    
+    .contact-row span {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    
+    .contact-row svg {
+      width: 12px;
+      height: 12px;
+    }
 
     .contact-row a {
-      color: #2d6a4f;
+      color: #333;
       text-decoration: none;
-      font-weight: 500;
     }
 
     .contact-row a:hover {
@@ -72,9 +75,9 @@
     }
 
     .section-title {
-      font-size: 8.8pt;
+      font-size: 9pt;
       font-weight: 700;
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
       text-transform: uppercase;
       color: #111;
       border-bottom: 1px solid #1a1a1a;
@@ -113,13 +116,19 @@
       font-size: 8.8pt;
       color: #111;
       white-space: nowrap;
+      font-weight: 600;
     }
 
     .entry-org {
       font-size: 8.8pt;
-      color: #444;
+      color: #111;
       margin-bottom: 2px;
-      font-style: italic;
+      font-weight: 600;
+    }
+    
+    .entry-sub-org {
+        color: #444;
+        font-weight: normal;
     }
 
     .entry-link {
@@ -154,39 +163,26 @@
 
     /* Education */
     .edu-entry {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 2px;
-    }
-
-    .edu-entry-content {
-      flex: 1;
+      margin-bottom: 4px;
     }
 
     .edu-entry .degree {
-      font-size: 9pt;
+      font-size: 9.2pt;
       font-weight: 700;
       color: #111;
+      margin-bottom: 1px;
     }
 
     .edu-entry .institution {
       font-size: 8.8pt;
-      color: #444;
-      font-style: italic;
-    }
-
-    .edu-entry .edu-meta {
-      font-size: 8.8pt;
-      color: #111;
-      text-align: right;
+      color: #333;
     }
 
     /* Skills */
     .skills-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2px;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
     }
 
     .skill-row {
@@ -195,7 +191,7 @@
     }
 
     .skill-label {
-      font-weight: 700;
+      font-weight: 600;
       color: #111;
     }
 
@@ -216,18 +212,18 @@
   <div class="header">
     <h1>Prashik Fulke</h1>
     <div class="contact-row">
-      <span class="location">Nagpur, Maharashtra, India</span> |
-      <span><a href="mailto:fulkeprashik@gmail.com">fulkeprashik@gmail.com</a></span> |
-      <span>7558604743</span> |
-      <a href="https://linkedin.com/in/prashik-fulke" target="_blank">linkedin.com/in/prashik-fulke</a> |
-      <a href="https://prashikfulke.me" target="_blank">prashikfulke.me</a>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> Nagpur, Maharashtra, India</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg> <a href="mailto:fulkeprashik@gmail.com">fulkeprashik@gmail.com</a></span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg> 7558604743</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg> <a href="https://linkedin.com/in/prashik-fulke" target="_blank">in/prashik-fulke</a></span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg> <a href="https://prashikfulke.me" target="_blank">prashikfulke.me</a></span>
     </div>
   </div>
 
   <!-- Summary -->
   <section class="summary">
     <div class="section-title">SUMMARY</div>
-    <p>B.Tech Graduate in Artificial Intelligence &amp; Data Science, building production-grade autonomous AI agents and LLM-orchestration systems. Hands-on experience with multi-agent architectures (LangGraph), RAG memory (Supabase pgvector), browser automation (Playwright), and full-stack deployment. Currently seeking AI/ML engineering and AI agent development internships.</p>
+    <p>Analytical Thinker and AI &amp; Data Science student -2026 specializing in building scalable, security-driven applications. Proven ability to bridge data science and software engineering, with hands-on experience in ML/DL model training, real-time anomaly detection, and full-stack deployment. Dedicated to building products, systems, and AI-powered applications.</p>
   </section>
 
   <!-- Experience -->
@@ -235,12 +231,14 @@
     <div class="section-title">EXPERIENCE</div>
     <div class="entry">
       <div class="entry-header">
-        <span class="entry-title">Intern — Softsense Technoserve (India) Private Limited</span>
-        <span class="entry-date">March 2025 – April 2025</span>
+        <span class="entry-title">Intern (AI &amp; Cybersecurity)</span>
       </div>
-      <div class="entry-org">Nagpur, India</div>
+      <div class="entry-header" style="margin-bottom: 2px;">
+        <span class="entry-org">Softsense Technoserve (India) Private Limited</span>
+        <span class="entry-date">March 2025 - April 2025, Nagpur, India</span>
+      </div>
       <ul class="bullet-list">
-        <li>Built an AI-driven log monitoring system using machine learning and deep learning to detect real-time security anomalies.</li>
+        <li>Engineered an AI-driven log monitoring system using Python and Scikit-Learn to detect real-time security anomalies, processing high-volume log streams with 90%+ accuracy.</li>
         <li>Reduced false positives by 30% and achieved 90%+ detection accuracy through model tuning and feature engineering.</li>
         <li>Developed a Streamlit-based dashboard for live log analysis and automated alerts.</li>
       </ul>
@@ -249,31 +247,33 @@
 
   <!-- Projects -->
   <section>
-    <div class="section-title">PROJECTS</div>
+    <div class="section-title">PROJECT</div>
 
     <div class="entry">
       <div class="entry-header">
         <span class="entry-title">Baxton — Autonomous AI Social Media Agent</span>
-        <span class="entry-date">2025</span>
       </div>
-      <div class="entry-org">Personal Project</div>
+      <div class="entry-header" style="margin-bottom: 2px;">
+        <span class="entry-org entry-sub-org">Personal Project • <a class="entry-link" href="https://prashikfulke.me/BAXTON" target="_blank">prashikfulke.me/BAXTON</a> • June 2026 - June 2026</span>
+      </div>
       <ul class="bullet-list">
         <li>Engineered a fully autonomous AI agent using LangGraph StateGraph, FastAPI, and Playwright that manages Reddit and Instagram accounts end-to-end via a Telegram Bot — handling outreach, multi-turn conversations, and reporting with zero human intervention.</li>
         <li>Designed a decoupled architecture: a 70B LLM Orchestrator (NVIDIA Llama 3.3) for real-time command execution and a Background Radar Daemon for asynchronous inbox monitoring and autonomous reply management.</li>
         <li>Implemented a Tri-Core Cognitive Architecture (Orchestrator, Decision Engine, Persona-Voiced Drafter) deployed live to collect structured product reviews from real customers with zero manual follow-up.</li>
-        <li>Built a Shadow DOM-piercing Playwright scraper with a recursive TreeWalker to extract live chat from WebSocket-rendered Reddit Chat, and integrated Supabase pgvector RAG for cross-session persona consistency across platforms.</li>
+        <li>Built a Shadow DOM-piercing Playwright scraper with a recursive TreeWalker to extract live chat from WebSocketrendered Reddit Chat, and integrated Supabase pgvector RAG for cross-session persona consistency across platforms.</li>
       </ul>
     </div>
 
     <div class="entry">
       <div class="entry-header">
         <span class="entry-title">OSAgent</span>
-        <span class="entry-date">August 2025</span>
       </div>
-      <div class="entry-org"><a class="entry-link" href="https://osagent.tech" target="_blank">osagent.tech</a></div>
+      <div class="entry-header" style="margin-bottom: 2px;">
+        <span class="entry-org entry-sub-org"><a class="entry-link" href="https://osagent.tech" target="_blank">osagent.tech</a> • August 2025 - August 2025</span>
+      </div>
       <ul class="bullet-list">
-        <li>Designed and developed a responsive front-end using HTML &amp; CSS, improving page load performance by ~30%.</li>
-        <li>Built and integrated backend services using Firebase, enabling real-time updates and secure data handling.</li>
+        <li>Developed a responsive dashboard using Streamlit to visualize agentic task status, improving user interaction efficiency by 40%.</li>
+        <li>Integrated Firebase for real-time state management and built a FastAPI backend to orchestrate agentic workflows, reducing data latency by 20% for end-users.</li>
         <li>Managed version control and collaboration through GitHub with structured deployments, and deployed/hosted the application on DigitalOcean, maintaining uptime and scalability.</li>
       </ul>
     </div>
@@ -284,27 +284,18 @@
     <div class="section-title">EDUCATION</div>
 
     <div class="edu-entry">
-      <div class="edu-entry-content">
-        <div class="degree">B.Tech in Artificial Intelligence &amp; Data Science</div>
-        <div class="institution">Anjuman College of Engineering and Technology, Nagpur | Aggregate: 7.0</div>
-      </div>
-      <div class="edu-meta">2022 – 2026 (Graduated)</div>
+      <div class="degree">B.Tech in Artificial Intelligence &amp; Data Science</div>
+      <div class="institution">Rashtrasant Tukadoji Maharaj Nagpur University • Nagpur • 2022 – 2026 • 7.0</div>
     </div>
 
     <div class="edu-entry">
-      <div class="edu-entry-content">
-        <div class="degree">12th (HSC)</div>
-        <div class="institution">Dada Ramchand Bakhru Sindhu Mahavidyalaya, Nagpur | 58%</div>
-      </div>
-      <div class="edu-meta">2021 – 2022</div>
+      <div class="degree">12th (HSC)</div>
+      <div class="institution">Dada Ramchand Bakhru Sindhu Mahavidyalaya • Nagpur • 2021 – 2022 • 58%</div>
     </div>
 
     <div class="edu-entry">
-      <div class="edu-entry-content">
-        <div class="degree">10th (SSC)</div>
-        <div class="institution">St. John's High School, Nagpur | 82%</div>
-      </div>
-      <div class="edu-meta">2019 – 2020</div>
+      <div class="degree">10th (SSC)</div>
+      <div class="institution">St. John's High School • Nagpur • 2019 – 2020 • 83%</div>
     </div>
   </section>
 
@@ -313,32 +304,25 @@
     <div class="section-title">SKILLS</div>
     <div class="skills-grid">
       <div class="skill-row">
-        <span class="skill-label">Programming &amp; Scripting:</span>
-        <span class="skill-value">Python, SQL, HTML, CSS, JavaScript</span>
+        <span class="skill-value"><span class="skill-label">Generative AI &amp; LLMs:</span> LangGraph, LangChain, Multi-Agent Systems, RAG, Prompt Engineering, Large Language Models (LLMs), Autonomous AI Agents</span>
       </div>
       <div class="skill-row">
-        <span class="skill-label">AI &amp; Agent Development:</span>
-        <span class="skill-value">LangGraph, LLM Orchestration, Prompt Engineering, Multi-Agent Systems, Autonomous AI Agents, RAG (pgvector), Anomaly Detection, ML Fundamentals</span>
+        <span class="skill-value"><span class="skill-label">Computer Vision:</span> Stable Diffusion (Flux.1, SDXL), LoRA Training, ControlNet, ComfyUI, AnimateDiff</span>
       </div>
       <div class="skill-row">
-        <span class="skill-label">Automation &amp; Browsers:</span>
-        <span class="skill-value">Playwright, Playwright-Stealth, Shadow DOM Scraping, WebSocket Extraction, Headless Browser Automation</span>
+        <span class="skill-value"><span class="skill-label">Machine Learning &amp; Data Science:</span> Python, Scikit-Learn, Anomaly Detection, Isolation Forests, Feature Engineering</span>
       </div>
       <div class="skill-row">
-        <span class="skill-label">APIs &amp; Cloud:</span>
-        <span class="skill-value">FastAPI, REST APIs, Telegram Bot API, NVIDIA API, Groq API, Firebase, DigitalOcean, Supabase, GitHub</span>
+        <span class="skill-value"><span class="skill-label">Backend &amp; Agentic Infrastructure:</span> FastAPI, REST APIs, Playwright, Headless Browser Automation, Shadow DOM Scraping, WebSocket Extraction</span>
       </div>
       <div class="skill-row">
-        <span class="skill-label">Databases:</span>
-        <span class="skill-value">Supabase (pgvector), SQL, Firebase Realtime Database, SQLite</span>
+        <span class="skill-value"><span class="skill-label">Data &amp; Vector Engineering:</span> Supabase (pgvector), SQL, SQLite, Firebase Realtime Database</span>
       </div>
       <div class="skill-row">
-        <span class="skill-label">Tools &amp; Platforms:</span>
-        <span class="skill-value">Git, VS Code, Streamlit</span>
+        <span class="skill-value"><span class="skill-label">Cloud &amp; Integrations:</span> DigitalOcean, NVIDIA API, Groq API, Telegram Bot API</span>
       </div>
       <div class="skill-row">
-        <span class="skill-label">Soft Skills:</span>
-        <span class="skill-value">Cross-Functional Communication, Problem Solving, Analytical Thinking</span>
+        <span class="skill-value"><span class="skill-label">Developer Tools:</span> Git, GitHub, VS Code, Streamlit</span>
       </div>
     </div>
   </section>
