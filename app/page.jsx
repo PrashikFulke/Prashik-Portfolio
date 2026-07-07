@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
-import { Mail, Linkedin, Github, ArrowRight, CheckCircle2, Terminal, ShieldCheck, Globe, ArrowUpRight, ChevronLeft, ChevronRight, Play, X } from 'lucide-react';
+import { Mail, Linkedin, Github, ArrowRight, CheckCircle2, Terminal, ShieldCheck, Globe, ArrowUpRight, ChevronLeft, ChevronRight, Play, X, Award } from 'lucide-react';
 
 const GlowingStar = ({ scrollYProgress, index }) => {
   const threshold = index === 0 ? 0.15 : index === 1 ? 0.5 : 0.85;
@@ -69,10 +69,28 @@ Processed and analyzed real-time log streams for instantaneous threat alerts usi
   }
 ];
 
+const CERTIFICATE_DATA = [
+  {
+    student: "Prashik Fulke",
+    link: "https://verify.skilljar.com/c/3kdiv594zm2w",
+    date: "July 3, 2026",
+    course: "AI Fluency: Framework & Foundations",
+    offeredBy: "Anthropic Education"
+  },
+  {
+    student: "Prashik Fulke",
+    link: "https://drive.google.com/file/d/1TEUK9KxRtrJOuzmn2Q4IuwNvqqbMVFKA/view?usp=drive_link",
+    date: "April 8, 2025",
+    course: "AI Based Real-Time Log Monitoring",
+    offeredBy: "Softsense Technoserve (India) Private Limited"
+  }
+];
+
 export default function Home() {
   const journeyRef = useRef(null);
   const scrollContainerRef = useRef(null);
   const [selectedProject, setSelectedProject] = useState(null);
+  const [isCertificatesOpen, setIsCertificatesOpen] = useState(false);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -84,12 +102,12 @@ export default function Home() {
 
   // Prevent background scrolling when modal is open
   useEffect(() => {
-    if (selectedProject) {
+    if (selectedProject || isCertificatesOpen) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
     }
-  }, [selectedProject]);
+  }, [selectedProject, isCertificatesOpen]);
 
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
@@ -178,6 +196,13 @@ export default function Home() {
                 <Github className="w-5 h-5" /> <span className="hidden sm:inline">GitHub</span>
               </a>
             </div>
+            <button 
+              onClick={() => setIsCertificatesOpen(true)}
+              className="glass-btn w-full text-center py-4 rounded-xl font-medium text-lg flex items-center justify-center gap-2 group"
+            >
+              <Award className="w-5 h-5 group-hover:scale-110 transition-transform" />
+              Certificates & Achievements
+            </button>
           </div>
         </motion.div>
       </section>
@@ -445,6 +470,66 @@ export default function Home() {
               <div className="prose prose-invert max-w-none text-white/80 leading-relaxed whitespace-pre-line space-y-6">
                 {selectedProject.extendedDescription}
               </div>
+
+            </div>
+          </motion.div>
+        </div>
+      )}
+    </AnimatePresence>
+
+    {/* Certificates Modal */}
+    <AnimatePresence>
+      {isCertificatesOpen && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8">
+          <motion.div 
+            initial={{ opacity: 0 }} 
+            animate={{ opacity: 1 }} 
+            exit={{ opacity: 0 }}
+            onClick={() => setIsCertificatesOpen(false)}
+            className="absolute inset-0 bg-black/60 backdrop-blur-sm cursor-pointer"
+          />
+          
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: 20 }}
+            transition={{ type: "spring", damping: 25, stiffness: 300 }}
+            className="relative w-full max-w-3xl max-h-[85vh] glass-panel rounded-3xl overflow-hidden flex flex-col"
+          >
+            <div className="p-8 md:p-10 overflow-y-auto hide-scrollbar space-y-6">
+              <button 
+                onClick={() => setIsCertificatesOpen(false)}
+                className="absolute top-6 right-6 w-10 h-10 rounded-full glass-panel flex items-center justify-center text-white/50 hover:text-white transition-colors z-10"
+              >
+                <X className="w-5 h-5" />
+              </button>
+
+              <div className="mb-6">
+                <h3 className="text-3xl md:text-4xl font-bold mb-3">Certificates & Achievements</h3>
+                <p className="text-white/70">A collection of my professional milestones and certifications.</p>
+              </div>
+
+              {CERTIFICATE_DATA.map((cert, idx) => (
+                <div key={idx} className="glass-panel p-6 rounded-2xl flex flex-col md:flex-row gap-6 items-start md:items-center justify-between group border border-white/5 hover:border-primary/30 transition-colors">
+                  <div className="flex-1">
+                    <p className="text-xs font-mono text-primary mb-2 uppercase tracking-wider">{cert.date}</p>
+                    <h4 className="text-xl font-bold mb-2">{cert.course}</h4>
+                    <p className="text-white/70 mb-1 text-sm">Offered By: <span className="text-white">{cert.offeredBy}</span></p>
+                    <p className="text-white/50 text-sm">Student: {cert.student}</p>
+                  </div>
+                  <div className="shrink-0 w-full md:w-auto">
+                    {cert.link !== "#" ? (
+                      <a href={cert.link} target="_blank" rel="noopener noreferrer" className="glass-btn w-full md:w-auto px-6 py-3 rounded-xl font-medium text-sm flex items-center justify-center gap-2 text-white border border-white/10 hover:border-primary transition-all">
+                        View Certificate <ArrowUpRight className="w-4 h-4" />
+                      </a>
+                    ) : (
+                      <span className="glass-btn w-full md:w-auto px-6 py-3 rounded-xl font-medium text-sm flex items-center justify-center gap-2 text-white border border-white/10 opacity-70">
+                        Verified <CheckCircle2 className="w-4 h-4" />
+                      </span>
+                    )}
+                  </div>
+                </div>
+              ))}
 
             </div>
           </motion.div>
